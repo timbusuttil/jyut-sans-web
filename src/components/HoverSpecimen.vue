@@ -77,6 +77,7 @@ export default {
 
 .character:hover {
   transform: scale(1.5);
+  z-index: 2;
 }
 
 .risingToggle {
