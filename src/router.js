@@ -20,6 +20,11 @@ export default new Router({
       path: '/typeface',
       name: 'typeface',
       component: () => import(/* webpackChunkName: "typeface" */ './views/Typeface.vue')
+    },
+    {
+      path: '/interview',
+      name: 'interview',
+      component: () => import(/* webpackChunkName: "typeface" */ './views/Interview.vue')
     }
   ]
 })
