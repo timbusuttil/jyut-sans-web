@@ -18,5 +18,9 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+
+  border: 5px solid gold;
+  overflow-y: scroll;
+  height: 600px;
 }
 </style>
