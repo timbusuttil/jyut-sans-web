@@ -1,12 +1,31 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/typeface">Type Specimen</router-link> |
-      <router-link to="/interview">Interview</router-link>
+    <div class="outerContainer">
+      <div class="innerContainer">
+        <router-link to="/">
+          <div class="nav" id="tl">
+            project
+          </div>
+        </router-link>
+        <router-link to="/typeface">
+          <div class="nav" id="tr">
+            specimen
+          </div>
+        </router-link>
+        <router-link to="/interactive">
+          <div class="nav" id="br">
+            interactive
+          </div>
+        </router-link>
+        <router-link to="/interview">
+          <div class="nav" id="bl">
+            interview
+          </div>
+        </router-link>
+        <router-view/>
+      </div>
+      <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
   </div>
 </template>
 
@@ -16,11 +35,60 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 
-  border: 5px solid gold;
+  background: lightgreen;
+  width: 100vw;
+  height: 100vh;
+  padding: 50px 100px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.outerContainer {
+  position: relative;
+  margin: auto auto;
+  height: 620px;
+  width: 960px;
+}
+
+.innerContainer {
+  border: 5px solid black;
   overflow-y: scroll;
-  height: 600px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 50px;
+}
+
+.nav {
+  position: absolute;
+  width: 140px;
+  height: 70px;
+  border: 5px solid black;
+  background: lightgreen;
+}
+
+.nav:hover {
+  background: mediumseagreen;
+}
+
+#tl {
+  top: -35px;
+  left: -70px;
+  transform: rotate(10deg);
+}
+
+#tr {
+  top: -35px;
+  right: -70px;
+}
+
+#bl {
+  bottom: -35px;
+  left: -70px;
+}
+
+#br {
+  bottom: -35px;
+  right: -70px;
 }
 </style>
