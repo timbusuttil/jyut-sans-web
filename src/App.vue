@@ -52,11 +52,12 @@
 }
 
 .innerContainer {
-  border: 5px solid black;
   overflow-y: scroll;
   height: 100%;
   box-sizing: border-box;
   padding: 50px;
+  border: 7px solid black;
+  box-shadow: 0 0 0 4px lightgreen, 0 0 0 8px black;
 }
 
 .nav {
