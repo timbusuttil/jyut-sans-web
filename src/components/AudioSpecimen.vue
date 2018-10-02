@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>click on the numbers to hear the tones</h3>
-    <button v-for="(sound, index) in audioSamples" type="button" name="button" @click="playSound(index)">{{index}}</button>
+    <button v-for="(sound, index) in audioSamples" :key="index" type="button" name="button" @click="playSound(index)">{{index}}</button>
   </div>
 </template>
 
