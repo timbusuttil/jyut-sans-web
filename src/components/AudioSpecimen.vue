@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>click on the numbers to hear the tones</h3>
-    <button type="button" name="button" @click="playSound">1</button>
+    <button v-for="(sound, index) in audioSamples" type="button" name="button" @click="playSound(index)">{{index}}</button>
   </div>
 </template>
 
@@ -10,13 +10,20 @@ export default {
   name: 'AudioSpecimen',
   data () {
     return {
-      // audio: new Audio('@/src/assets/1 do.mp3')
+      audioSamples: [
+        new Audio('http://www.soundjay.com/button/beep-02.wav'),
+        new Audio('http://www.soundjay.com/button/beep-03.wav'),
+        new Audio('http://www.soundjay.com/button/beep-04.wav'),
+        new Audio('http://www.soundjay.com/button/beep-05.wav'),
+        new Audio('http://www.soundjay.com/button/beep-06.wav'),
+        new Audio('http://www.soundjay.com/button/beep-07.wav'),
+      ]
     }
   },
   methods: {
-    // playSound () {
-    //   this.audio.play()
-    // }
+    playSound (index) {
+      this.audioSamples[index].play()
+    }
   }
 }
 </script>
