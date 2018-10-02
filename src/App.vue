@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :style="backgroundColour">
     <div class="outerContainer">
       <div class="innerContainer">
         <router-link to="/">
@@ -26,10 +26,30 @@
       </div>
       <div style="margin-top: 20px;">
         <router-link to="/about" style="margin-top: 20px;">About</router-link>
+        <p>{{this.$route.path}}</p>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'app',
+  computed: {
+    backgroundColour () {
+      if (this.$route.path === '/typeface') {
+        return {
+          background: 'pink'
+        }
+      } else {
+        return {
+          background: 'lightgreen'
+        }
+      }
+    }
+  }
+}
+</script>
 
 <style>
 #app {
