@@ -6,11 +6,13 @@
       <div class="gridRow"></div>
       <div class="gridRow"></div>
     </div>
-    <div class="image" :style="currentStyles[0] + 'margin-left: -44px'" @click="incrementWord(0)"></div>
-    <div class="image" :style="currentStyles[1]" @click="incrementWord(1)"></div>
-    <div class="image" :style="currentStyles[2]" @click="incrementWord(2)"></div>
-    <div class="image" :style="currentStyles[3]" @click="incrementWord(3)"></div>
-    <h2 class="unselectable">{{currentString}}</h2>
+    <div class="image" :style="currentStyles[0] + 'margin-left: -44px'" @click="incrementWord(0)" @mouseover="setHover(0, true)" @mouseleave="setHover(0, false)"></div>
+    <div class="image" :style="currentStyles[1]" @click="incrementWord(1)" @mouseover="setHover(1, true)" @mouseleave="setHover(1, false)"></div>
+    <div class="image" :style="currentStyles[2]" @click="incrementWord(2)" @mouseover="setHover(2, true)" @mouseleave="setHover(2, false)"></div>
+    <div class="image" :style="currentStyles[3]" @click="incrementWord(3)" @mouseover="setHover(3, true)" @mouseleave="setHover(3, false)"></div>
+    <h2 class="unselectable">
+      <span v-for="(object, index) in objects" :key="index" :style="object.isHovered ? 'border-bottom: 2px solid black;' : 'border: none'">&#8239;{{getCurrentString(index)}}&#8239;</span>
+    </h2>
     <!-- <button type="button" name="button" @click="incrementWord(0)">first</button>
     <button type="button" name="button" @click="incrementWord(1)">second</button>
     <button type="button" name="button" @click="incrementWord(2)">third</button>
@@ -29,19 +31,23 @@ export default {
       objects: [
         {
           images: ['black', 'white', 'pink', 'purple', 'gray'],
-          words: ['the cat', 'my shoes', 'a bee', 'a spider', 'my dog']
+          words: ['the cat', 'my shoes', 'a bee', 'a spider', 'my dog'],
+          isHovered: false
         },
         {
           images: ['black', 'white', 'pink', 'purple'],
-          words: ['sat on', 'ate', 'frightened', 'destroyed']
+          words: ['sat on', 'ate', 'frightened', 'destroyed'],
+          isHovered: false
         },
         {
           images: ['black', 'white', 'pink', 'purple'],
-          words: ['the delicious', 'the scary', 'the big', 'the small']
+          words: ['the delicious', 'the scary', 'the big', 'the small'],
+          isHovered: false
         },
         {
           images: ['black', 'white', 'pink'],
-          words: ['horse', 'apple', 'goose']
+          words: ['horse', 'apple', 'goose'],
+          isHovered: false
         }
       ]
     }
@@ -49,14 +55,10 @@ export default {
   methods: {
     incrementWord (i) {
       this.currentIndices[i] < this.objects[i].words.length-1 ? this.currentIndices[i] ++ : this.currentIndices[i] = 0
-      this.currentString = this.getCurrentString()
       this.currentStyles = this.getCurrentStyles()
     },
-    getCurrentString () {
-      return this.objects[0].words[this.currentIndices[0]] + ' ' +
-             this.objects[1].words[this.currentIndices[1]] + ' ' +
-             this.objects[2].words[this.currentIndices[2]] + ' ' +
-             this.objects[3].words[this.currentIndices[3]]
+    getCurrentString (index) {
+      return this.objects[index].words[this.currentIndices[index]]
     },
     getCurrentStyles () {
       return [
@@ -65,10 +67,12 @@ export default {
         'background: ' + this.objects[2].images[this.currentIndices[2]] + ';',
         'background: ' + this.objects[3].images[this.currentIndices[3]] + ';',
       ]
+    },
+    setHover (index, val) {
+      this.objects[index].isHovered = val
     }
   },
   created () {
-    this.currentString = this.getCurrentString()
     this.currentStyles = this.getCurrentStyles()
   }
 }
