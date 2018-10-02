@@ -32,10 +32,20 @@
       <div class="character">.</div>
       <div class="character">,</div>
     </div>
+    <h3>take a closer look</h3>
     <div class="hoverToggles">
-      <div class="rising toggle" @mouseover="focusCharacters('rising')" @mouseleave="focusCharacters('all')"></div>
-      <div class="falling toggle" @mouseover="focusCharacters('falling')" @mouseleave="focusCharacters('all')"></div>
-      <div class="stable toggle" @mouseover="focusCharacters('stable')" @mouseleave="focusCharacters('all')"></div>
+      <div>
+        <div class="rising toggle" @mouseover="focusCharacters('rising')" @mouseleave="focusCharacters('all')"></div>
+        <h3>rising vowels</h3>
+      </div>
+      <div>
+        <div class="falling toggle" @mouseover="focusCharacters('falling')" @mouseleave="focusCharacters('all')"></div>
+        <h3>falling vowels</h3>
+      </div>
+      <div>
+        <div class="stable toggle" @mouseover="focusCharacters('stable')" @mouseleave="focusCharacters('all')"></div>
+        <h3>stable vowels</h3>
+      </div>
     </div>
   </div>
 </template>
@@ -80,10 +90,17 @@ export default {
   z-index: 2;
 }
 
+.hoverToggles {
+  width: 800px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
 .toggle {
   width: 80px;
   height: 80px;
-  margin: 20px 20px 0 0;
 }
 
 .rising {
