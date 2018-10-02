@@ -6,7 +6,7 @@
       <div class="gridRow"></div>
       <div class="gridRow"></div>
     </div>
-    <div class="image" :style="currentStyles[0] + 'margin-left: -45px'" @click="incrementWord(0)"></div>
+    <div class="image" :style="currentStyles[0] + 'margin-left: -44px'" @click="incrementWord(0)"></div>
     <div class="image" :style="currentStyles[1]" @click="incrementWord(1)"></div>
     <div class="image" :style="currentStyles[2]" @click="incrementWord(2)"></div>
     <div class="image" :style="currentStyles[3]" @click="incrementWord(3)"></div>
