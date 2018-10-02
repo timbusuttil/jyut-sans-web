@@ -10,7 +10,7 @@
     <div class="image" :style="currentStyles[1]" @click="incrementWord(1)"></div>
     <div class="image" :style="currentStyles[2]" @click="incrementWord(2)"></div>
     <div class="image" :style="currentStyles[3]" @click="incrementWord(3)"></div>
-    <h2>{{currentString}}</h2>
+    <h2 class="unselectable">{{currentString}}</h2>
     <!-- <button type="button" name="button" @click="incrementWord(0)">first</button>
     <button type="button" name="button" @click="incrementWord(1)">second</button>
     <button type="button" name="button" @click="incrementWord(2)">third</button>
@@ -95,5 +95,12 @@ export default {
   width: 200px;
   height: 200px;
   display: inline-block;
+}
+
+.unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 </style>
