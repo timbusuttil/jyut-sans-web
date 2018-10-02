@@ -1,15 +1,19 @@
 <template>
   <div>
-    <div class="gridContainer">
+    <div class="gridContainer" v-show="showGrid">
       <div class="gridRow"></div>
       <div class="gridRow"></div>
       <div class="gridRow"></div>
       <div class="gridRow"></div>
     </div>
-    <div class="image" :style="currentStyles[0] + 'margin-left: -44px'" @click="incrementWord(0)" @mouseover="setHover(0, true)" @mouseleave="setHover(0, false)"></div>
-    <div class="image" :style="currentStyles[1]" @click="incrementWord(1)" @mouseover="setHover(1, true)" @mouseleave="setHover(1, false)"></div>
-    <div class="image" :style="currentStyles[2]" @click="incrementWord(2)" @mouseover="setHover(2, true)" @mouseleave="setHover(2, false)"></div>
-    <div class="image" :style="currentStyles[3]" @click="incrementWord(3)" @mouseover="setHover(3, true)" @mouseleave="setHover(3, false)"></div>
+    <div>
+      <div class="image" :style="currentStyles[0] + 'margin-left: -44px'" @click="incrementWord(0)" @mouseover="setHover(0, true)" @mouseleave="setHover(0, false)"></div>
+      <div class="image" :style="currentStyles[1]" @click="incrementWord(1)" @mouseover="setHover(1, true)" @mouseleave="setHover(1, false)"></div>
+      <div class="image" :style="currentStyles[2]" @click="incrementWord(2)" @mouseover="setHover(2, true)" @mouseleave="setHover(2, false)"></div>
+      <div class="image" :style="currentStyles[3]" @click="incrementWord(3)" @mouseover="setHover(3, true)" @mouseleave="setHover(3, false)"></div>
+    </div>
+    <button type="button" name="button" @click="resetIndices">start again</button>
+    <button type="button" name="button" @click="toggleGrid">toggle grid</button>
     <h2 class="unselectable">
       <span v-for="(object, index) in objects" :key="index" :style="object.isHovered ? 'border-bottom: 2px solid black;' : 'border: none'">&#8239;{{getCurrentString(index)}}&#8239;</span>
     </h2>
@@ -28,6 +32,7 @@ export default {
       currentString: '',
       currentStyles: ['', '', '', ''],
       currentIndices: [0, 0, 0, 0],
+      showGrid: true,
       objects: [
         {
           images: ['black', 'white', 'pink', 'purple', 'gray'],
@@ -70,6 +75,13 @@ export default {
     },
     setHover (index, val) {
       this.objects[index].isHovered = val
+    },
+    toggleGrid () {
+      this.showGrid = !this.showGrid
+    },
+    resetIndices () {
+      this.currentIndices = [0, 0, 0, 0]
+      this.currentStyles = this.getCurrentStyles()
     }
   },
   created () {
