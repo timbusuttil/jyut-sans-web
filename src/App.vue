@@ -24,7 +24,9 @@
         </router-link>
         <router-view/>
       </div>
-      <router-link to="/about">About</router-link>
+      <div style="margin-top: 20px;">
+        <router-link to="/about" style="margin-top: 20px;">About</router-link>
+      </div>
     </div>
   </div>
 </template>
