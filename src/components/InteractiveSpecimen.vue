@@ -7,7 +7,7 @@
       <div class="gridRow"></div>
     </div>
     <div>
-      <div class="image" :style="currentStyles[0] + 'margin-left: -44px'" @click="incrementWord(0)" @mouseover="setHover(0, true)" @mouseleave="setHover(0, false)"></div>
+      <div class="image" :style="currentStyles[0]" @click="incrementWord(0)" @mouseover="setHover(0, true)" @mouseleave="setHover(0, false)"></div>
       <div class="image" :style="currentStyles[1]" @click="incrementWord(1)" @mouseover="setHover(1, true)" @mouseleave="setHover(1, false)"></div>
       <div class="image" :style="currentStyles[2]" @click="incrementWord(2)" @mouseover="setHover(2, true)" @mouseleave="setHover(2, false)"></div>
       <div class="image" :style="currentStyles[3]" @click="incrementWord(3)" @mouseover="setHover(3, true)" @mouseleave="setHover(3, false)"></div>

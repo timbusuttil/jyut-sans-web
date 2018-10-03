@@ -26,6 +26,5 @@ export default {
 <style>
 .typefaceCopyContainer {
   margin: 100px 0;
-  text-align: left;
 }
 </style>
