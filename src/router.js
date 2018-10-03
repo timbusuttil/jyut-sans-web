@@ -27,6 +27,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "interview" */ './views/Interview.vue')
     },
     {
+      path: '/how-to-play',
+      name: 'how-to-play',
+      component: () => import(/* webpackChunkName: "interactive" */ './views/HowToPlay.vue')
+    },
+    {
       path: '/interactive',
       name: 'interactive',
       component: () => import(/* webpackChunkName: "interactive" */ './views/Interactive.vue')

@@ -12,7 +12,7 @@
             specimen
           </div>
         </router-link>
-        <router-link to="/interactive">
+        <router-link to="/how-to-play">
           <div class="nav" id="br">
             interactive
           </div>
