@@ -1,36 +1,7 @@
 <template>
   <div>
     <div class="specimenContainer">
-      <div class="character rising">a</div>
-      <div class="character rising">b</div>
-      <div class="character falling">c</div>
-      <div class="character falling">d</div>
-      <div class="character stable">e</div>
-      <div class="character stable">f</div>
-      <div class="character stable">g</div>
-      <div class="character stable">h</div>
-      <div class="character">i</div>
-      <div class="character falling">j</div>
-      <div class="character">k</div>
-      <div class="character falling">l</div>
-      <div class="character">m</div>
-      <div class="character">n</div>
-      <div class="character rising">o</div>
-      <div class="character">p</div>
-      <div class="character stable">q</div>
-      <div class="character">r</div>
-      <div class="character">s</div>
-      <div class="character stable">t</div>
-      <div class="character rising">u</div>
-      <div class="character">v</div>
-      <div class="character">w</div>
-      <div class="character">x</div>
-      <div class="character">y</div>
-      <div class="character falling">z</div>
-      <div class="character rising">!</div>
-      <div class="character">?</div>
-      <div class="character">.</div>
-      <div class="character">,</div>
+      <div v-for="(character, index) in characters" :key="index" :class="character.class">{{character.char}}</div>
     </div>
     <h3>take a closer look</h3>
     <div class="hoverToggles">
@@ -53,6 +24,212 @@
 <script>
 export default {
   name: 'HoverSpecimen',
+  data () {
+    return {
+      characters: [
+        {
+          char: 'a',
+          src: '',
+          class: 'character rising'
+        },
+        {
+          char: 'a',
+          src: '',
+          class: 'character falling'
+        },
+        {
+          char: 'a',
+          src: '',
+          class: 'character stable'
+        },
+        {
+          char: 'b',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'c',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'd',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'e',
+          src: '',
+          class: 'character rising'
+        },
+        {
+          char: 'e',
+          src: '',
+          class: 'character falling'
+        },
+        {
+          char: 'e',
+          src: '',
+          class: 'character stable'
+        },
+        {
+          char: 'f',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'g',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'h',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'i',
+          src: '',
+          class: 'character rising'
+        },
+        {
+          char: 'i',
+          src: '',
+          class: 'character falling'
+        },
+        {
+          char: 'i',
+          src: '',
+          class: 'character stable'
+        },
+        {
+          char: 'j',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'k',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'l',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'm',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'n',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'o',
+          src: '',
+          class: 'character rising'
+        },
+        {
+          char: 'o',
+          src: '',
+          class: 'character falling'
+        },
+        {
+          char: 'o',
+          src: '',
+          class: 'character stable'
+        },
+        {
+          char: 'p',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'q',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'r',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 's',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 't',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'u',
+          src: '',
+          class: 'character rising'
+        },
+        {
+          char: 'u',
+          src: '',
+          class: 'character stable'
+        },
+        {
+          char: 'u',
+          src: '',
+          class: 'character falling'
+        },
+        {
+          char: 'v',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'w',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'x',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'y',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: 'z',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: '!',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: '?',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: '.',
+          src: '',
+          class: 'character'
+        },
+        {
+          char: ',',
+          src: '',
+          class: 'character'
+        }
+      ]
+    }
+  },
   methods: {
     focusCharacters (mode) {
       if (mode !== 'all') {
