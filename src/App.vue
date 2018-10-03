@@ -24,7 +24,7 @@
         </router-link>
         <router-view/>
       </div>
-      <div style="margin-top: 20px;">
+      <div style="margin-top: 20px; text-align: center;">
         <router-link to="/about" style="margin-top: 20px;">About</router-link>
         <p>{{this.$route.path}}</p>
       </div>
