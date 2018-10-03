@@ -6,15 +6,15 @@
     <h3>take a closer look</h3>
     <div class="hoverToggles">
       <div>
-        <div class="rising toggle" @mouseover="focusCharacters('rising')" @mouseleave="focusCharacters('all')"></div>
+        <img :src="currentHover === 'rising' ? require('../assets/typeface/open eye.png') : require('../assets/typeface/eye.png')" class="toggle" @mouseover="focusCharacters('rising')" @mouseleave="focusCharacters('all')">
         <h3>rising vowels</h3>
       </div>
       <div>
-        <div class="falling toggle" @mouseover="focusCharacters('falling')" @mouseleave="focusCharacters('all')"></div>
+        <img :src="currentHover === 'falling' ? require('../assets/typeface/open eye.png') : require('../assets/typeface/eye.png')" class="toggle" @mouseover="focusCharacters('falling')" @mouseleave="focusCharacters('all')">
         <h3>falling vowels</h3>
       </div>
       <div>
-        <div class="stable toggle" @mouseover="focusCharacters('stable')" @mouseleave="focusCharacters('all')"></div>
+        <img :src="currentHover === 'stable' ? require('../assets/typeface/open eye.png') : require('../assets/typeface/eye.png')" class="toggle" @mouseover="focusCharacters('stable')" @mouseleave="focusCharacters('all')">
         <h3>stable vowels</h3>
       </div>
     </div>
@@ -26,6 +26,7 @@ export default {
   name: 'HoverSpecimen',
   data () {
     return {
+      currentHover: '',
       characters: [
         {
           char: 'a',
@@ -233,11 +234,13 @@ export default {
   methods: {
     focusCharacters (mode) {
       if (mode !== 'all') {
+        this.currentHover = mode
         let elementList = document.querySelectorAll("div.character:not(." + mode + ")")
         elementList.forEach((currentElement) => {
           currentElement.style.opacity = 0
         })
       } else {
+        this.currentHover = ''
         let elementList = document.querySelectorAll("div.character")
         elementList.forEach((currentElement) => {
           currentElement.style.opacity = 1
@@ -250,8 +253,8 @@ export default {
 
 <style>
 .specimenContainer {
-  width: 800px;
-  height: 240px;
+  width: 700px;
+  height: 280px;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
 }
@@ -268,7 +271,7 @@ export default {
 }
 
 .hoverToggles {
-  width: 800px;
+  width: 700px;
   height: 100px;
   display: flex;
   justify-content: space-between;

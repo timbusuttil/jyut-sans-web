@@ -37,7 +37,7 @@ export default {
   name: 'app',
   computed: {
     backgroundColour () {
-      if (this.$route.path === '/typeface') {
+      if (this.$route.path === '/') {
         return {
           background: 'pink'
         }

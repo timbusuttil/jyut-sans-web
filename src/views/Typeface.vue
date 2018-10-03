@@ -1,13 +1,11 @@
 <template>
   <div class="typeface">
     <HoverSpecimen />
-    <br>
-    <br>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pulvinar vulputate purus id aliquet. Maecenas accumsan accumsan lacus, at tincidunt ex fringilla sed. Vestibulum luctus sit amet est a dictum. In hac habitasse platea dictumst. Vivamus molestie leo est, non efficitur justo consequat sit amet. Mauris sed nunc ut mauris pulvinar luctus a in metus. Vivamus imperdiet ligula massa, eget maximus eros ullamcorper ut. Cras mi sapien, tincidunt vel eleifend vel, congue in sapien. Phasellus a suscipit metus.</p>
-    <p>Nam lacinia tortor sit amet nibh interdum aliquam. Maecenas ac felis id tortor mollis lacinia. Nam pulvinar velit quis diam tristique, vitae interdum libero congue. Aliquam luctus condimentum elit, nec tincidunt elit posuere cursus. Curabitur feugiat tristique auctor. Praesent at tincidunt dui. Quisque sed arcu in tellus auctor semper in scelerisque mi. Nulla at libero non urna rutrum tincidunt at eget ipsum. Fusce enim risus, dignissim sit amet tellus eu, scelerisque ultricies odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas eget neque et dui malesuada ullamcorper a quis lectus. Aenean ut scelerisque erat. Cras a diam nulla. Nam ullamcorper suscipit odio ut condimentum. Pellentesque volutpat diam at dignissim congue.</p>
-    <p>Donec venenatis congue congue. Fusce rutrum sollicitudin neque, gravida ullamcorper tortor vehicula et. Etiam quis hendrerit ligula, et sagittis sapien. In sed ex eu lorem semper venenatis. Praesent odio lacus, sollicitudin ac semper at, blandit eget nunc. Quisque venenatis fermentum gravida. Aenean suscipit nulla quis ligula tincidunt tempus. In convallis nunc interdum orci viverra condimentum. Aenean ut odio elementum, varius massa ut, aliquet erat. Sed lobortis, libero eu congue vehicula, ipsum ligula efficitur odio, sit amet dictum lacus diam vitae neque. Quisque vitae rhoncus nisi. Vivamus justo risus, commodo quis lacus et, consectetur sollicitudin tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris laoreet quam quis tempor pretium. Pellentesque eget mauris hendrerit, congue nibh at, pulvinar sem. Nullam laoreet metus eget hendrerit porta.</p>
-    <br>
-    <br>
+    <div class="typefaceCopyContainer">
+      <p>Cantonese is a tone language. Different words are pronounced with a tone that has to be ‘sung’ to a relative pitch. Cantonese is often described by non-Cantonese speakers as musical, implying a swaying rhythm to the language. However sharp aspirated consonants similar to the P, T and K sounds in English contrast the melodic characteristics.</p>
+      <p>Jyut Sans attempts to emulate this contrast in the spoken language through decorative elements of the letterforms. Elegant curvature is juxtaposed by abrupt changes in width and curve direction. Furthermore the typeface has been designed to be used on the diagrammatic tone chart commonly used to visually portray the tonal levels of Cantonese. Because the stress of Cantonese falls on vowels and diphthongs (vowels that combine into another sound) each vowel has been designed with a rising, falling and stable variant in accordance with the tonal diagram.</p>
+      <p>In Cantonese, there are six different tones. Different words are pronounced with a particular tone and can have up to six tonal variations. Note that not every word necessarily has six tonal variations that has to be ‘sung’ to a relative pitch.For example, FAN can be pronounced at six different tones that can mean ‘divide’, ‘flour’, ‘sleep’, ‘grave’, ‘energetic’ or ‘portion’. Click on the chart below to hear the individual tones and then play the game to see how tone can change meaning.</p>
+    </div>
     <AudioSpecimen />
   </div>
 </template>
@@ -24,3 +22,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.typefaceCopyContainer {
+  margin: 100px 0;
+  text-align: left;
+}
+</style>
