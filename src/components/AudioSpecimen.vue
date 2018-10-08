@@ -11,7 +11,7 @@ export default {
   data () {
     return {
       audioSamples: [
-        new Audio('http://www.soundjay.com/button/beep-02.wav'),
+        new Audio(require('@/assets/typeface/1 do.mp3')),
         new Audio('http://www.soundjay.com/button/beep-03.wav'),
         new Audio('http://www.soundjay.com/button/beep-04.wav'),
         new Audio('http://www.soundjay.com/button/beep-05.wav'),
