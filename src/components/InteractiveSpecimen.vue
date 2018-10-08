@@ -7,10 +7,8 @@
       <div class="gridRow"></div>
     </div>
     <div>
-      <div class="image" :style="currentStyles[0]" @click="incrementWord(0)" @mouseover="setHover(0, true)" @mouseleave="setHover(0, false)"></div>
-      <div class="image" :style="currentStyles[1]" @click="incrementWord(1)" @mouseover="setHover(1, true)" @mouseleave="setHover(1, false)"></div>
-      <div class="image" :style="currentStyles[2]" @click="incrementWord(2)" @mouseover="setHover(2, true)" @mouseleave="setHover(2, false)"></div>
-      <div class="image" :style="currentStyles[3]" @click="incrementWord(3)" @mouseover="setHover(3, true)" @mouseleave="setHover(3, false)"></div>
+      <img v-for="(object, index) in objects" :key="index" class="image" :src="require('@/assets/typeface/letters/' + getCurrentImage(index))" :style="currentStyles[index]" @click="incrementWord(index)" @mouseover="setHover(index, true)" @mouseleave="setHover(index, false)">
+      <!-- <img v-for="(object, index) in objects" :key="index" class="image" :src="require('@/assets/typeface/letters/' + getCurrentImage(index))" style="background: white;" @click="incrementWord(index)" @mouseover="setHover(index, true)" @mouseleave="setHover(index, false)"> -->
     </div>
     <button type="button" name="button" @click="resetIndices">start again</button>
     <button type="button" name="button" @click="toggleGrid" style="float: right;">toggle grid</button>
@@ -29,28 +27,31 @@ export default {
   name: 'InteractiveSpecimen',
   data () {
     return {
-      currentString: '',
       currentStyles: ['', '', '', ''],
       currentIndices: [0, 0, 0, 0],
       showGrid: true,
       objects: [
         {
-          images: ['black', 'white', 'pink', 'purple', 'gray'],
+          styles: ['orange', 'white', 'pink', 'purple', 'gray'],
+          images: ['b.png', 'c.png', 'd.png', 'f.png', 'g.png'],
           words: ['the cat', 'my shoes', 'a bee', 'a spider', 'my dog'],
           isHovered: false
         },
         {
-          images: ['black', 'white', 'pink', 'purple'],
+          styles: ['orange', 'white', 'pink', 'purple'],
+          images: ['b.png', 'c.png', 'd.png', 'f.png'],
           words: ['sat on', 'ate', 'frightened', 'destroyed'],
           isHovered: false
         },
         {
-          images: ['black', 'white', 'pink', 'purple'],
+          styles: ['orange', 'white', 'pink', 'purple'],
+          images: ['b.png', 'c.png', 'd.png', 'f.png'],
           words: ['the delicious', 'the scary', 'the big', 'the small'],
           isHovered: false
         },
         {
-          images: ['black', 'white', 'pink'],
+          styles: ['orange', 'white', 'pink'],
+          images: ['b.png', 'c.png', 'd.png'],
           words: ['horse', 'apple', 'goose'],
           isHovered: false
         }
@@ -65,12 +66,15 @@ export default {
     getCurrentString (index) {
       return this.objects[index].words[this.currentIndices[index]]
     },
+    getCurrentImage (index) {
+      return this.objects[index].images[this.currentIndices[index]]
+    },
     getCurrentStyles () {
       return [
-        'background: ' + this.objects[0].images[this.currentIndices[0]] + ';',
-        'background: ' + this.objects[1].images[this.currentIndices[1]] + ';',
-        'background: ' + this.objects[2].images[this.currentIndices[2]] + ';',
-        'background: ' + this.objects[3].images[this.currentIndices[3]] + ';',
+        'background: ' + this.objects[0].styles[this.currentIndices[0]] + ';',
+        'background: ' + this.objects[1].styles[this.currentIndices[1]] + ';',
+        'background: ' + this.objects[2].styles[this.currentIndices[2]] + ';',
+        'background: ' + this.objects[3].styles[this.currentIndices[3]] + ';',
       ]
     },
     setHover (index, val) {
@@ -107,7 +111,7 @@ export default {
 }
 
 .image {
-  background: pink;
+  background: red;
   width: 200px;
   height: 200px;
   display: inline-block;
