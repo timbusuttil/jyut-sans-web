@@ -1,20 +1,22 @@
 <template>
   <div>
     <div class="specimenContainer">
-      <div v-for="(character, index) in characters" :key="index" :class="character.class">{{character.char}}</div>
+      <div v-for="(character, index) in characters" :key="index" :class="character.class">
+        <img :src="require('@/assets/typeface/letters/' + character.src)" class="tileImage">
+      </div>
     </div>
     <h3>take a closer look</h3>
     <div class="hoverToggles">
       <div>
-        <img :src="currentHover === 'rising' ? require('../assets/typeface/open eye.png') : require('../assets/typeface/eye.png')" class="toggle" @mouseover="focusCharacters('rising')" @mouseleave="focusCharacters('all')">
+        <img :src="currentHover === 'rising' ? require('@/assets/typeface/open eye.png') : require('@/assets/typeface/eye.png')" class="toggle" @mouseover="focusCharacters('rising')" @mouseleave="focusCharacters('all')">
         <h3>rising vowels</h3>
       </div>
       <div>
-        <img :src="currentHover === 'falling' ? require('../assets/typeface/open eye.png') : require('../assets/typeface/eye.png')" class="toggle" @mouseover="focusCharacters('falling')" @mouseleave="focusCharacters('all')">
+        <img :src="currentHover === 'falling' ? require('@/assets/typeface/open eye.png') : require('@/assets/typeface/eye.png')" class="toggle" @mouseover="focusCharacters('falling')" @mouseleave="focusCharacters('all')">
         <h3>falling vowels</h3>
       </div>
       <div>
-        <img :src="currentHover === 'stable' ? require('../assets/typeface/open eye.png') : require('../assets/typeface/eye.png')" class="toggle" @mouseover="focusCharacters('stable')" @mouseleave="focusCharacters('all')">
+        <img :src="currentHover === 'stable' ? require('@/assets/typeface/open eye.png') : require('@/assets/typeface/eye.png')" class="toggle" @mouseover="focusCharacters('stable')" @mouseleave="focusCharacters('all')">
         <h3>stable vowels</h3>
       </div>
     </div>
@@ -30,202 +32,202 @@ export default {
       characters: [
         {
           char: 'a',
-          src: '',
+          src: 'a rising.png',
           class: 'character rising'
         },
         {
           char: 'a',
-          src: '',
+          src: 'a falling.png',
           class: 'character falling'
         },
         {
           char: 'a',
-          src: '',
+          src: 'a stable.png',
           class: 'character stable'
         },
         {
           char: 'b',
-          src: '',
+          src: 'b.png',
           class: 'character'
         },
         {
           char: 'c',
-          src: '',
+          src: 'c.png',
           class: 'character'
         },
         {
           char: 'd',
-          src: '',
+          src: 'd.png',
           class: 'character'
         },
         {
           char: 'e',
-          src: '',
+          src: 'e rising.png',
           class: 'character rising'
         },
         {
           char: 'e',
-          src: '',
+          src: 'e falling.png',
           class: 'character falling'
         },
         {
           char: 'e',
-          src: '',
+          src: 'e stable.png',
           class: 'character stable'
         },
         {
           char: 'f',
-          src: '',
+          src: 'f.png',
           class: 'character'
         },
         {
           char: 'g',
-          src: '',
+          src: 'g.png',
           class: 'character'
         },
         {
           char: 'h',
-          src: '',
+          src: 'h.png',
           class: 'character'
         },
         {
           char: 'i',
-          src: '',
+          src: 'i rising.png',
           class: 'character rising'
         },
         {
           char: 'i',
-          src: '',
+          src: 'i falling.png',
           class: 'character falling'
         },
         {
           char: 'i',
-          src: '',
+          src: 'i stable.png',
           class: 'character stable'
         },
         {
           char: 'j',
-          src: '',
+          src: 'j.png',
           class: 'character'
         },
         {
           char: 'k',
-          src: '',
+          src: 'k.png',
           class: 'character'
         },
         {
           char: 'l',
-          src: '',
+          src: 'l.png',
           class: 'character'
         },
         {
           char: 'm',
-          src: '',
+          src: 'm.png',
           class: 'character'
         },
         {
           char: 'n',
-          src: '',
+          src: 'n.png',
           class: 'character'
         },
         {
           char: 'o',
-          src: '',
+          src: 'o rising.png',
           class: 'character rising'
         },
         {
           char: 'o',
-          src: '',
+          src: 'o falling.png',
           class: 'character falling'
         },
         {
           char: 'o',
-          src: '',
+          src: 'o stable.png',
           class: 'character stable'
         },
         {
           char: 'p',
-          src: '',
+          src: 'p.png',
           class: 'character'
         },
         {
           char: 'q',
-          src: '',
+          src: 'q.png',
           class: 'character'
         },
         {
           char: 'r',
-          src: '',
+          src: 'r.png',
           class: 'character'
         },
         {
           char: 's',
-          src: '',
+          src: 's.png',
           class: 'character'
         },
         {
           char: 't',
-          src: '',
+          src: 't.png',
           class: 'character'
         },
         {
           char: 'u',
-          src: '',
+          src: 'u rising.png',
           class: 'character rising'
         },
         {
           char: 'u',
-          src: '',
+          src: 'u stable.png',
           class: 'character stable'
         },
         {
           char: 'u',
-          src: '',
+          src: 'u falling.png',
           class: 'character falling'
         },
         {
           char: 'v',
-          src: '',
+          src: 'v.png',
           class: 'character'
         },
         {
           char: 'w',
-          src: '',
+          src: 'w.png',
           class: 'character'
         },
         {
           char: 'x',
-          src: '',
+          src: 'x.png',
           class: 'character'
         },
         {
           char: 'y',
-          src: '',
+          src: 'y.png',
           class: 'character'
         },
         {
           char: 'z',
-          src: '',
+          src: 'z.png',
           class: 'character'
         },
         {
           char: '!',
-          src: '',
+          src: 'exclamation.png',
           class: 'character'
         },
         {
           char: '?',
-          src: '',
+          src: 'question.png',
           class: 'character'
         },
         {
           char: '.',
-          src: '',
+          src: 'period.png',
           class: 'character'
         },
         {
           char: ',',
-          src: '',
+          src: 'comma.png',
           class: 'character'
         }
       ]
@@ -259,9 +261,16 @@ export default {
   grid-template-columns: repeat(10, 1fr);
 }
 
+.tileImage {
+  width: 100%;
+  height: 100%;
+}
+
 .character {
   background: white;
-  border: 1px solid black;
+  width: 70px;
+  height: 70px;
+  /* border: 1px solid black; */
   transition: 0.2s;
 }
 
