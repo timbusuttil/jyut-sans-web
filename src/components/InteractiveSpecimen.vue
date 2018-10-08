@@ -13,7 +13,7 @@
       <div class="image" :style="currentStyles[3]" @click="incrementWord(3)" @mouseover="setHover(3, true)" @mouseleave="setHover(3, false)"></div>
     </div>
     <button type="button" name="button" @click="resetIndices">start again</button>
-    <button type="button" name="button" @click="toggleGrid">toggle grid</button>
+    <button type="button" name="button" @click="toggleGrid" style="float: right;">toggle grid</button>
     <h2 class="unselectable">
       <span v-for="(object, index) in objects" :key="index" :style="object.isHovered ? 'border-bottom: 2px solid black;' : 'border: none'">&#8239;{{getCurrentString(index)}}&#8239;</span>
     </h2>
@@ -92,7 +92,7 @@ export default {
 
 <style>
 .gridContainer {
-  border: 1px solid red;
+  border: 1px solid green;
   border-bottom: none;
   height: 200px;
   width: 800px;
@@ -101,7 +101,7 @@ export default {
 }
 
 .gridRow {
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid green;
   height: 50px;
   box-sizing: border-box;
 }
