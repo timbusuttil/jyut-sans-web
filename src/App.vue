@@ -1,7 +1,7 @@
 <template>
-  <div id="app" :style="backgroundColour">
+  <div id="app" :style="{background: this.backgroundColour}">
     <div class="outerContainer">
-      <div class="innerContainer">
+      <div class="innerContainer" :style="{boxShadow: this.boxShadow}">
         <router-link to="/">
           <div class="nav" id="tl">
             project
@@ -27,7 +27,9 @@
       <div style="margin-top: 20px; text-align: center;">
         <router-link to="/about" style="margin-top: 20px;">About</router-link>
         <p>{{this.$route.path}}</p>
+        <p>{{this.currentRouteIndex}}</p>
       </div>
+      <img :src="this.typeNavSrc">
     </div>
   </div>
 </template>
@@ -35,17 +37,31 @@
 <script>
 export default {
   name: 'app',
+  data () {
+    return {
+      backgroundColours: ['#DFB8AA', '#F17236', '#FADD75', '#FADD75', '#FCC700', '#DFB8AA']
+    }
+  },
   computed: {
+    currentRouteIndex () {
+      return ['/', '/typeface', '/how-to-play', '/interactive', '/interview', '/about'].indexOf(this.$route.path)
+    },
     backgroundColour () {
-      if (this.$route.path === '/') {
-        return {
-          background: 'pink'
-        }
-      } else {
-        return {
-          background: 'lightgreen'
-        }
+      return this.backgroundColours[this.currentRouteIndex]
+    },
+    boxShadow () {
+      return '0 0 0 4px ' + this.backgroundColour + ', 0 0 0 8px black'
+    },
+    typeNavSrc () {
+      let path = 'home'
+      // this will eventually just be DOES include '/' or '/about'
+      if (!['/', '/interactive', '/typeface', '/how-to-play', '/interactive', '/about'].includes(this.$route.path)) {
+        path = this.$route.path.substring(1)
       }
+      // else if (['/how-to-play', '/interactive'].includes(this.$route.path)) {
+      //   path = 'play'
+      // }
+      return require('@/assets/nav/typeface_' + path + '.png')
     }
   }
 }
