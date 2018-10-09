@@ -8,9 +8,10 @@
           </div>
         </router-link>
         <router-link to="/typeface">
-          <div class="nav" id="tr">
-            specimen
-          </div>
+          <!-- <div class="nav" id="tr"> -->
+            <img :src="this.typeNavSrc" class="nav" id="tr" @mouseover="navHover(1, true)" @mouseleave="navHover(1, false)">
+            <!-- specimen -->
+          <!-- </div> -->
         </router-link>
         <router-link to="/how-to-play">
           <div class="nav" id="br">
@@ -29,17 +30,19 @@
         <p>{{this.$route.path}}</p>
         <p>{{this.currentRouteIndex}}</p>
       </div>
-      <img :src="this.typeNavSrc">
     </div>
   </div>
 </template>
 
 <script>
+// import navTypefaceHome from '@/assets/nav/typeface_home.png'
+
 export default {
   name: 'app',
   data () {
     return {
-      backgroundColours: ['#DFB8AA', '#F17236', '#FADD75', '#FADD75', '#FCC700', '#DFB8AA']
+      backgroundColours: ['#DFB8AA', '#F17236', '#FADD75', '#FADD75', '#FCC700', '#DFB8AA'],
+      navHovers: [false, false, false, false]
     }
   },
   computed: {
@@ -61,7 +64,13 @@ export default {
       // else if (['/how-to-play', '/interactive'].includes(this.$route.path)) {
       //   path = 'play'
       // }
-      return require('@/assets/nav/typeface_' + path + '.png')
+      let hover = this.navHovers[1] ? '_hover' : ''
+      return require('@/assets/nav/typeface_' + path + hover + '.png')
+    }
+  },
+  methods: {
+    navHover (index, val) {
+      this.navHovers[index] = val
     }
   }
 }
@@ -100,7 +109,7 @@ export default {
 .nav {
   position: absolute;
   width: 140px;
-  height: 70px;
+  height: 140px;
   border: 5px solid black;
   background: lightgreen;
 }
@@ -116,7 +125,7 @@ export default {
 }
 
 #tr {
-  top: -35px;
+  top: -70px;
   right: -70px;
 }
 
