@@ -267,7 +267,7 @@ export default {
 }
 
 .character {
-  background: white;
+  background: rgb(241, 114, 54);
   width: 70px;
   height: 70px;
   /* border: 1px solid black; */
@@ -291,8 +291,7 @@ export default {
   width: 80px;
   height: 80px;
 }
-
-.rising {
+/* .rising {
   background: pink;
 }
 
@@ -302,5 +301,5 @@ export default {
 
 .stable {
   background: tomato;
-}
+} */
 </style>
