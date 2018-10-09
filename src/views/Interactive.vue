@@ -1,6 +1,5 @@
 <template>
   <div class="interactive">
-    <h1>interactive page</h1>
     <InteractiveSpecimen />
   </div>
 </template>
