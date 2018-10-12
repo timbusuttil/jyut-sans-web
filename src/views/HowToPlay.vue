@@ -40,16 +40,24 @@ export default {
 </script>
 
 <style>
+.howToPlay {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .flexContainer {
   display: flex;
   width: 100%;
   height: 200px;
-  border: 1px solid red;
 }
 
 .flexItem {
   flex: 1;
-  border: 1px solid blue;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .featureImage {
