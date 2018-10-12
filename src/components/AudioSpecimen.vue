@@ -1,19 +1,15 @@
 <template>
   <div>
     <h3>click on the numbers to hear the tones</h3>
-    <div v-for="(sound, index) in audioSamples" :key="index" style="display: inline;">
-      <img :src="sound.isPlaying ? sound.activeImage : sound.inactiveImage" style="width: 30px; height: 30px;">
-      <button type="button" name="button" @click="playSound(index)">{{index}}</button>
-      <p v-if="sound.isPlaying" style="display: inline;">{{ sound.word }}</p>
-      <!-- <p v-else>{{ index }} not playing</p> -->
+    <div class="flexContainer">
+      <div v-for="(sound, index) in audioSamples" :key="index" class="fan">
+        <img :src="sound.isPlaying ? sound.activeImage : sound.inactiveImage" style="width: 100px; height: 100px;">
+        <button :class="sound.isPlaying ? 'audioButton audioButtonActive' : 'audioButton audioButtonInactive'" type="button" name="button" @click="playSound(index)">{{index}}</button>
+        <transition name="fade">
+          <p v-show="sound.isPlaying">{{ sound.word }}</p>
+        </transition>
+      </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
   </div>
 </template>
 
@@ -93,5 +89,44 @@ export default {
 </script>
 
 <style>
+.flexContainer {
+  display: flex;
+}
 
+.fan {
+  height: 300px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.audioButton {
+  display: block;
+  margin: 20px auto 10px auto;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #DFB8AA;
+  border-radius: 20px;
+}
+
+.audioButton:focus {
+  outline: none;
+}
+
+.audioButtonActive {
+  background: green;
+  background: #DFB8AA;
+  color: #F17236;
+}
+
+.audioButtonInactive {
+  background: none;
+  color: #DFB8AA;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>
