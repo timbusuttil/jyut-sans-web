@@ -13,7 +13,7 @@
     <button type="button" name="button" @click="resetIndices">start again</button>
     <button type="button" name="button" @click="toggleGrid" style="float: right;">toggle grid</button>
     <h2 class="unselectable">
-      <span v-for="(object, index) in objects" :key="index" :style="object.isHovered ? 'border-bottom: 2px solid black;' : 'border: none'">&#8239;{{getCurrentString(index)}}&#8239;</span>
+      <span v-for="(object, index) in objects" :key="index" class="word" :style="object.isHovered ? 'border-bottom: 2px solid black;' : 'border: none'">&#8239;{{getCurrentString(index)}}&#8239;</span>
     </h2>
     <!-- <button type="button" name="button" @click="incrementWord(0)">first</button>
     <button type="button" name="button" @click="incrementWord(1)">second</button>
@@ -122,5 +122,9 @@ export default {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.word:hover {
+  border-bottom: 2px solid black !important;
 }
 </style>
