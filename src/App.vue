@@ -112,6 +112,7 @@ export default {
   height: 140px;
   border: 5px solid black;
   background: lightgreen;
+  z-index: 100;
 }
 
 .nav:hover {
