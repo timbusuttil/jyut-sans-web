@@ -3,25 +3,16 @@
     <div class="outerContainer">
       <div class="innerContainer" :style="{boxShadow: this.boxShadow}">
         <router-link to="/">
-          <div class="nav" id="tl">
-            project
-          </div>
+          <img :src="navImages.project.isHovered ? navImages.project.images[currentRouteIndex].hovered : navImages.project.images[currentRouteIndex].unhovered" class="nav" id="tl" @mouseover="navHover(navImages.project, true)" @mouseleave="navHover(navImages.project, false)">
         </router-link>
         <router-link to="/typeface">
-          <!-- <div class="nav" id="tr"> -->
-            <img :src="this.typeNavSrc" class="nav" id="tr" @mouseover="navHover(1, true)" @mouseleave="navHover(1, false)">
-            <!-- specimen -->
-          <!-- </div> -->
+          <img :src="navImages.typeface.isHovered ? navImages.typeface.images[currentRouteIndex].hovered : navImages.typeface.images[currentRouteIndex].unhovered" class="nav" id="tr" @mouseover="navHover(navImages.typeface, true)" @mouseleave="navHover(navImages.typeface, false)">
         </router-link>
         <router-link to="/how-to-play">
-          <div class="nav" id="br">
-            interactive
-          </div>
+          <img :src="navImages.play.isHovered ? navImages.play.images[currentRouteIndex].hovered : navImages.play.images[currentRouteIndex].unhovered" class="nav" id="br" @mouseover="navHover(navImages.play, true)" @mouseleave="navHover(navImages.play, false)">
         </router-link>
         <router-link to="/interview">
-          <div class="nav" id="bl">
-            interview
-          </div>
+          <img :src="navImages.video.isHovered ? navImages.video.images[currentRouteIndex].hovered : navImages.video.images[currentRouteIndex].unhovered" class="nav" id="bl" @mouseover="navHover(navImages.video, true)" @mouseleave="navHover(navImages.video, false)">
         </router-link>
         <router-view/>
       </div>
@@ -35,14 +26,178 @@
 </template>
 
 <script>
-// import navTypefaceHome from '@/assets/nav/typeface_home.png'
-
 export default {
   name: 'app',
   data () {
     return {
       backgroundColours: ['#DFB8AA', '#F17236', '#FADD75', '#FADD75', '#FCC700', '#DFB8AA'],
-      navHovers: [false, false, false, false]
+      navHovers: [false, false, false, false],
+      navImages: {
+        project: {
+          isHovered: false,
+          images: [
+            {
+              // project
+              unhovered: require('@/assets/nav/project-project.png'),
+              hovered: require('@/assets/nav/project-project.png'),
+              isHovered: false
+            },
+            {
+              // typeface
+              unhovered: require('@/assets/nav/project-typeface.png'),
+              hovered: require('@/assets/nav/project-typeface-hover.png'),
+              isHovered: false
+            },
+            {
+              // howToPlay
+              unhovered: require('@/assets/nav/project-typeface.png'), // replace with correct asset
+              hovered: require('@/assets/nav/project-typeface-hover.png'), // replace with correct asset
+              isHovered: false
+            },
+            {
+              // play
+              unhovered: require('@/assets/nav/project-typeface.png'), // replace with correct asset
+              hovered: require('@/assets/nav/project-typeface-hover.png'), // replace with correct asset
+              isHovered: false
+            },
+            {
+              // video
+              unhovered: require('@/assets/nav/project-video.png'),
+              hovered: require('@/assets/nav/project-video-hover.png'),
+              isHovered: false
+            },
+            {
+              // about
+              unhovered: require('@/assets/nav/project-typeface.png'), // replace with correct asset
+              hovered: require('@/assets/nav/project-typeface-hover.png'), // replace with correct asset
+              isHovered: false
+            }
+          ]
+        },
+        typeface: {
+          isHovered: false,
+          images: [
+            {
+              // project
+              unhovered: require('@/assets/nav/typeface-project.png'),
+              hovered: require('@/assets/nav/typeface-project-hover.png'),
+              isHovered: false
+            },
+            {
+              // typeface
+              unhovered: require('@/assets/nav/typeface-typeface.png'),
+              hovered: require('@/assets/nav/typeface-typeface.png'),
+              isHovered: false
+            },
+            {
+              // howToPlay
+              unhovered: require('@/assets/nav/typeface-project.png'), // replace with correct asset
+              hovered: require('@/assets/nav/typeface-project-hover.png'), // replace with correct asset
+              isHovered: false
+            },
+            {
+              // play
+              unhovered: require('@/assets/nav/typeface-project.png'), // replace with correct asset
+              hovered: require('@/assets/nav/typeface-project-hover.png'), // replace with correct asset
+              isHovered: false
+            },
+            {
+              // video
+              unhovered: require('@/assets/nav/typeface-video.png'),
+              hovered: require('@/assets/nav/typeface-video-hover.png'),
+              isHovered: false
+            },
+            {
+              // about
+              unhovered: require('@/assets/nav/typeface-project.png'), // replace with correct asset
+              hovered: require('@/assets/nav/typeface-project-hover.png'), // replace with correct asset
+              isHovered: false
+            }
+          ]
+        },
+        play: {
+          isHovered: false,
+          images: [
+            {
+              // project
+              unhovered: require('@/assets/nav/play-project.png'),
+              hovered: require('@/assets/nav/play-project-hover.png'),
+              isHovered: false
+            },
+            {
+              // typeface
+              unhovered: require('@/assets/nav/play-typeface.png'),
+              hovered: require('@/assets/nav/play-typeface-hover.png'),
+              isHovered: false
+            },
+            {
+              // howToPlay
+              unhovered: require('@/assets/nav/play-project.png'), // replace with correct asset
+              hovered: require('@/assets/nav/play-project-hover.png'), // replace with correct asset
+              isHovered: false
+            },
+            {
+              // play
+              unhovered: require('@/assets/nav/play-project.png'), // replace with correct asset
+              hovered: require('@/assets/nav/play-project-hover.png'), // replace with correct asset
+              isHovered: false
+            },
+            {
+              // video
+              unhovered: require('@/assets/nav/play-video.png'),
+              hovered: require('@/assets/nav/play-video-hover.png'),
+              isHovered: false
+            },
+            {
+              // about
+              unhovered: require('@/assets/nav/play-project.png'), // replace with correct asset
+              hovered: require('@/assets/nav/play-project-hover.png'), // replace with correct asset
+              isHovered: false
+            }
+          ]
+        },
+        video: {
+          isHovered: false,
+          images: [
+            {
+              // project
+              unhovered: require('@/assets/nav/video-project.png'),
+              hovered: require('@/assets/nav/video-project-hover.png'),
+              isHovered: false
+            },
+            {
+              // typeface
+              unhovered: require('@/assets/nav/video-typeface.png'),
+              hovered: require('@/assets/nav/video-typeface-hover.png'),
+              isHovered: false
+            },
+            {
+              // howToPlay
+              unhovered: require('@/assets/nav/video-project.png'), // replace with correct asset
+              hovered: require('@/assets/nav/video-project-hover.png'), // replace with correct asset
+              isHovered: false
+            },
+            {
+              // play
+              unhovered: require('@/assets/nav/video-project.png'), // replace with correct asset
+              hovered: require('@/assets/nav/video-project-hover.png'), // replace with correct asset
+              isHovered: false
+            },
+            {
+              // video
+              unhovered: require('@/assets/nav/video-video.png'),
+              hovered: require('@/assets/nav/video-video.png'),
+              isHovered: false
+            },
+            {
+              // about
+              unhovered: require('@/assets/nav/video-project.png'), // replace with correct asset
+              hovered: require('@/assets/nav/video-project-hover.png'), // replace with correct asset
+              isHovered: false
+            }
+          ]
+        },
+      }
     }
   },
   computed: {
@@ -54,23 +209,11 @@ export default {
     },
     boxShadow () {
       return '0 0 0 4px ' + this.backgroundColour + ', 0 0 0 8px black'
-    },
-    typeNavSrc () {
-      let path = 'home'
-      // this will eventually just be DOES include '/' or '/about'
-      if (!['/', '/interactive', '/typeface', '/how-to-play', '/interactive', '/about'].includes(this.$route.path)) {
-        path = this.$route.path.substring(1)
-      }
-      // else if (['/how-to-play', '/interactive'].includes(this.$route.path)) {
-      //   path = 'play'
-      // }
-      let hover = this.navHovers[1] ? '_hover' : ''
-      return require('@/assets/nav/typeface_' + path + hover + '.png')
     }
   },
   methods: {
-    navHover (index, val) {
-      this.navHovers[index] = val
+    navHover (navObject, val) {
+      navObject.isHovered = val
     }
   }
 }
@@ -110,13 +253,7 @@ export default {
   position: absolute;
   width: 140px;
   height: 140px;
-  border: 5px solid black;
-  background: lightgreen;
   z-index: 100;
-}
-
-.nav:hover {
-  background: mediumseagreen;
 }
 
 #tl {
