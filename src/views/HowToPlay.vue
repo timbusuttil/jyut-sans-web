@@ -61,6 +61,8 @@ export default {
 }
 
 .featureImage {
+  width: 150px;
+  height: 150px;
   border: 3px solid black;
   border-radius: 100%;
   object-fit: contain;
