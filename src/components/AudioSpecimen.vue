@@ -24,43 +24,43 @@ export default {
         {
           sound: new Howl({ src: [require('@/assets/typeface/sound/1 do.mp3')],  onplay: () => this.soundStarted(0), onend: () => this.soundEnded(0) }),
           word: 'divide',
-          activeImage: require('@/assets/typeface/open eye.png'),
-          inactiveImage: require('@/assets/typeface/eye.png'),
+          activeImage: require('@/assets/typeface/openeye.png'),
+          inactiveImage: require('@/assets/typeface/closedeye.png'),
           isPlaying: false
         },
         {
           sound: new Howl({ src: ['http://www.soundjay.com/button/beep-03.wav'], onplay: () => this.soundStarted(1), onend: () => this.soundEnded(1) }),
           word: 'flour',
-          activeImage: require('@/assets/typeface/open eye.png'),
-          inactiveImage: require('@/assets/typeface/eye.png'),
+          activeImage: require('@/assets/typeface/openeye.png'),
+          inactiveImage: require('@/assets/typeface/closedeye.png'),
           isPlaying: false
         },
         {
           sound: new Howl({ src: ['http://www.soundjay.com/button/beep-04.wav'], onplay: () => this.soundStarted(2), onend: () => this.soundEnded(2) }),
           word: 'sleep',
-          activeImage: require('@/assets/typeface/open eye.png'),
-          inactiveImage: require('@/assets/typeface/eye.png'),
+          activeImage: require('@/assets/typeface/openeye.png'),
+          inactiveImage: require('@/assets/typeface/closedeye.png'),
           isPlaying: false
         },
         {
           sound: new Howl({ src: ['http://www.soundjay.com/button/beep-05.wav'], onplay: () => this.soundStarted(3), onend: () => this.soundEnded(3) }),
           word: 'grave',
-          activeImage: require('@/assets/typeface/open eye.png'),
-          inactiveImage: require('@/assets/typeface/eye.png'),
+          activeImage: require('@/assets/typeface/openeye.png'),
+          inactiveImage: require('@/assets/typeface/closedeye.png'),
           isPlaying: false
         },
         {
           sound: new Howl({ src: ['http://www.soundjay.com/button/beep-06.wav'], onplay: () => this.soundStarted(4), onend: () => this.soundEnded(4) }),
           word: 'energetic',
-          activeImage: require('@/assets/typeface/open eye.png'),
-          inactiveImage: require('@/assets/typeface/eye.png'),
+          activeImage: require('@/assets/typeface/openeye.png'),
+          inactiveImage: require('@/assets/typeface/closedeye.png'),
           isPlaying: false
         },
         {
           sound: new Howl({ src: ['http://www.soundjay.com/button/beep-07.wav'], onplay: () => this.soundStarted(5), onend: () => this.soundEnded(5) }),
           word: 'portion',
-          activeImage: require('@/assets/typeface/open eye.png'),
-          inactiveImage: require('@/assets/typeface/eye.png'),
+          activeImage: require('@/assets/typeface/openeye.png'),
+          inactiveImage: require('@/assets/typeface/closedeye.png'),
           isPlaying: false
         }
       ]

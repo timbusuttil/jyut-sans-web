@@ -18,17 +18,17 @@ export default {
     return {
       flexItems: [
         {
-          image: require('../assets/typeface/eye.png'),
+          image: require('../assets/typeface/closedeye.png'),
           alt: '',
           text: 'Interact with words by clicking on them'
         },
         {
-          image: require('../assets/typeface/eye.png'),
+          image: require('../assets/typeface/closedeye.png'),
           alt: '',
           text: 'Click on the tone levels to see how tone changes meaning'
         },
         {
-          image: require('../assets/typeface/eye.png'),
+          image: require('../assets/typeface/closedeye.png'),
           alt: '',
           text: 'Turn the grid on and off at any time'
         }

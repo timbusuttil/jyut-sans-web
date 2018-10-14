@@ -8,15 +8,15 @@
     <h3>take a closer look</h3>
     <div class="hoverToggles">
       <div>
-        <img :src="currentHover === 'rising' ? require('@/assets/typeface/open eye.png') : require('@/assets/typeface/eye.png')" class="toggle" @mouseover="focusCharacters('rising')" @mouseleave="focusCharacters('all')">
+        <img :src="currentHover === 'rising' ? require('@/assets/typeface/openeye.png') : require('@/assets/typeface/closedeye.png')" class="toggle" @mouseover="focusCharacters('rising')" @mouseleave="focusCharacters('all')">
         <h3>rising vowels</h3>
       </div>
       <div>
-        <img :src="currentHover === 'falling' ? require('@/assets/typeface/open eye.png') : require('@/assets/typeface/eye.png')" class="toggle" @mouseover="focusCharacters('falling')" @mouseleave="focusCharacters('all')">
+        <img :src="currentHover === 'falling' ? require('@/assets/typeface/openeye.png') : require('@/assets/typeface/closedeye.png')" class="toggle" @mouseover="focusCharacters('falling')" @mouseleave="focusCharacters('all')">
         <h3>falling vowels</h3>
       </div>
       <div>
-        <img :src="currentHover === 'stable' ? require('@/assets/typeface/open eye.png') : require('@/assets/typeface/eye.png')" class="toggle" @mouseover="focusCharacters('stable')" @mouseleave="focusCharacters('all')">
+        <img :src="currentHover === 'stable' ? require('@/assets/typeface/openeye.png') : require('@/assets/typeface/closedeye.png')" class="toggle" @mouseover="focusCharacters('stable')" @mouseleave="focusCharacters('all')">
         <h3>stable vowels</h3>
       </div>
     </div>
