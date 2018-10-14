@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import {Howl, Howler} from 'howler'
+import {Howl} from 'howler'
 
 export default {
   name: 'AudioSpecimen',
@@ -71,18 +71,10 @@ export default {
       this.audioSamples[index].sound.play()
     },
     soundStarted (index) {
-      // console.log('sound started', index)
       this.audioSamples[index].isPlaying = true
     },
     soundEnded (index) {
-      // console.log('sound ended', index)
       this.audioSamples[index].isPlaying = false
-    }
-  },
-  watch: {
-    audioIsPlaying: function (val, oldVal) {
-      console.log(val)
-      console.log(oldVal)
     }
   }
 }
