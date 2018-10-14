@@ -3,16 +3,16 @@
     <div class="outerContainer">
       <div class="innerContainer" :style="{borderColor: this.borderColour, boxShadow: this.boxShadow}">
         <router-link to="/">
-          <img :src="navImages.project.isHovered ? navImages.project.images[currentRouteIndex].hovered : navImages.project.images[currentRouteIndex].unhovered" class="nav" id="tl" @mouseover="navHover(navImages.project, true)" @mouseleave="navHover(navImages.project, false)">
+          <img class="nav rectangle" id="tl" :src="navImages.project.isHovered ? navImages.project.images[currentRouteIndex].hovered : navImages.project.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.project, true)" @mouseleave="navHover(navImages.project, false)">
         </router-link>
         <router-link to="/typeface">
-          <img :src="navImages.typeface.isHovered ? navImages.typeface.images[currentRouteIndex].hovered : navImages.typeface.images[currentRouteIndex].unhovered" class="nav" id="tr" @mouseover="navHover(navImages.typeface, true)" @mouseleave="navHover(navImages.typeface, false)">
+          <img class="nav circle" id="tr" :src="navImages.typeface.isHovered ? navImages.typeface.images[currentRouteIndex].hovered : navImages.typeface.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.typeface, true)" @mouseleave="navHover(navImages.typeface, false)">
         </router-link>
         <router-link to="/how-to-play">
-          <img :src="navImages.play.isHovered ? navImages.play.images[currentRouteIndex].hovered : navImages.play.images[currentRouteIndex].unhovered" class="nav" id="br" @mouseover="navHover(navImages.play, true)" @mouseleave="navHover(navImages.play, false)">
+          <img class="nav rounded" id="br" :src="navImages.play.isHovered ? navImages.play.images[currentRouteIndex].hovered : navImages.play.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.play, true)" @mouseleave="navHover(navImages.play, false)">
         </router-link>
         <router-link to="/interview">
-          <img :src="navImages.video.isHovered ? navImages.video.images[currentRouteIndex].hovered : navImages.video.images[currentRouteIndex].unhovered" class="nav" id="bl" @mouseover="navHover(navImages.video, true)" @mouseleave="navHover(navImages.video, false)">
+          <img class="nav circle" id="bl" :src="navImages.video.isHovered ? navImages.video.images[currentRouteIndex].hovered : navImages.video.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.video, true)" @mouseleave="navHover(navImages.video, false)">
         </router-link>
         <router-view/>
       </div>
@@ -211,7 +211,7 @@ export default {
       return this.borderColours[this.currentRouteIndex]
     },
     boxShadow () {
-      return '0 0 0 4px ' + this.backgroundColour + ', 0 0 0 8px ' + this.borderColour
+      return '0 0 0 13px ' + this.backgroundColour + ', 0 0 0 19px ' + this.borderColour
     }
   },
   methods: {
@@ -248,35 +248,50 @@ export default {
   height: 100%;
   box-sizing: border-box;
   padding: 50px;
-  border-width: 7px;
+  border-width: 3px;
   border-style: solid;
 }
 
 .nav {
   position: absolute;
-  width: 140px;
-  height: 140px;
   z-index: 100;
 }
 
+.rectangle {
+  width: 185px;
+  /* height: 125px; */
+}
+
+.circle {
+  width: 135px;
+  height: 135px;
+  border-radius: 100px;
+}
+
+.rounded {
+  width: 135px;
+  height: 135px;
+  border-radius: 19px;
+}
+
 #tl {
-  top: -35px;
-  left: -70px;
-  transform: rotate(10deg);
+  top: -27px;
+  left: -35px;
+  transform: rotate(11deg);
 }
 
 #tr {
-  top: -70px;
-  right: -70px;
+  top: -40px;
+  right: -40px;
 }
 
 #bl {
-  bottom: -35px;
-  left: -70px;
+  bottom: -40px;
+  left: -40px;
 }
 
 #br {
-  bottom: -35px;
-  right: -70px;
+  bottom: -40px;
+  right: -40px;
 }
 </style>
