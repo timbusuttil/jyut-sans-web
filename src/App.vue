@@ -1,7 +1,7 @@
 <template>
   <div id="app" :style="{background: this.backgroundColour}">
     <div class="outerContainer">
-      <div class="innerContainer" :style="{boxShadow: this.boxShadow}">
+      <div class="innerContainer" :style="{borderColor: this.borderColour, boxShadow: this.boxShadow}">
         <router-link to="/">
           <img :src="navImages.project.isHovered ? navImages.project.images[currentRouteIndex].hovered : navImages.project.images[currentRouteIndex].unhovered" class="nav" id="tl" @mouseover="navHover(navImages.project, true)" @mouseleave="navHover(navImages.project, false)">
         </router-link>
@@ -30,8 +30,8 @@ export default {
   name: 'app',
   data () {
     return {
-      backgroundColours: ['#DFB8AA', '#F17236', '#FADD75', '#FADD75', '#FCC700', '#DFB8AA'],
-      navHovers: [false, false, false, false],
+      backgroundColours: ['#dfb8aa', '#f17236', '#FADD75', '#FADD75', '#fcc700', '#dfb8aa'],
+      borderColours: ['#440f23', '#fcdd00', '#ffffff', '#ffffff', '#f17236', '#440f23'],
       navImages: {
         project: {
           isHovered: false,
@@ -207,8 +207,11 @@ export default {
     backgroundColour () {
       return this.backgroundColours[this.currentRouteIndex]
     },
+    borderColour () {
+      return this.borderColours[this.currentRouteIndex]
+    },
     boxShadow () {
-      return '0 0 0 4px ' + this.backgroundColour + ', 0 0 0 8px black'
+      return '0 0 0 4px ' + this.backgroundColour + ', 0 0 0 8px ' + this.borderColour
     }
   },
   methods: {
@@ -245,8 +248,8 @@ export default {
   height: 100%;
   box-sizing: border-box;
   padding: 50px;
-  border: 7px solid black;
-  box-shadow: 0 0 0 4px lightgreen, 0 0 0 8px black;
+  border-width: 7px;
+  border-style: solid;
 }
 
 .nav {
