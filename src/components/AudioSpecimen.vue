@@ -98,16 +98,23 @@ export default {
   height: 40px;
   border: 3px solid #DFB8AA;
   border-radius: 20px;
+  transition: transform 0.2s;
 }
 
 .audioButton:focus {
   outline: none;
 }
 
+.audioButton:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+}
+
 .audioButtonActive {
   background: green;
   background: #DFB8AA;
   color: #F17236;
+  transform: scale(1.15);
 }
 
 .audioButtonInactive {
