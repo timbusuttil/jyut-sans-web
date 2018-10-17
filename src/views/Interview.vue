@@ -1,21 +1,39 @@
 <template>
   <div class="interview">
-    <h1>interview video</h1>
     <div class="videoContainer">
-      <div class="label">
+      <!-- <div class="label">
         <p>An interview with two bilingual first generation Chinese diaspora about their lived experience of negotiating spoken Cantonese Chinese-Australian</p>
-      </div>
-      <iframe class="video" width="640" height="360"
+      </div> -->
+      <!-- <iframe class="video" width="640" height="360"
         src="https://www.youtube.com/embed/tgbNymZ7vqY">
-      </iframe>
+      </iframe> -->
+      <p style="position: absolute; padding: 100px;">loading</p>
+      <iframe src="https://player.vimeo.com/video/294314377?color=ffffff&byline=0&portrait=0&title=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
   </div>
 </template>
 
+<script>
+export default {
+  name: 'interview',
+  created() {
+    let vimeoScript = document.createElement('script')
+    vimeoScript.setAttribute('src', 'https://player.vimeo.com/api/player.js')
+    document.head.appendChild(vimeoScript)
+  }
+}
+</script>
+
 <style>
+.interview {
+  width: 100%;
+  height: 100%;
+}
+
 .videoContainer {
-  background: black;
-  width: 640px;
+  /* background: red; */
+  /* width: 960px; */
+  height: 540px;
   position: relative;
 }
 

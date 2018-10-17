@@ -14,7 +14,9 @@
         <router-link to="/interview">
           <img class="nav circle" id="bl" :src="navImages.video.isHovered ? navImages.video.images[currentRouteIndex].hovered : navImages.video.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.video, true)" @mouseleave="navHover(navImages.video, false)">
         </router-link>
+        <!-- <keep-alive> -->
         <router-view/>
+        <!-- </keep-alive> -->
       </div>
       <div style="margin-top: 20px; text-align: center;">
         <router-link to="/about" style="margin-top: 20px;">About</router-link>
