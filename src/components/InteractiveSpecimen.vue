@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <div class="gridContainer" v-show="showGrid">
+  <div class="interactiveSpecimen">
+    <!-- <div class="gridContainer" v-show="showGrid">
       <div class="gridRow"></div>
       <div class="gridRow"></div>
       <div class="gridRow"></div>
       <div class="gridRow"></div>
-    </div>
-    <div>
+    </div> -->
+    <div class="imageContainer">
       <img v-for="(object, index) in objects" :key="index" class="image" :src="require('@/assets/typeface/letters/' + getCurrentImage(index))" @click="incrementWord(index)" @mouseover="setHover(index, true)" @mouseleave="setHover(index, false)">
     </div>
     <button type="button" name="button" @click="resetIndices">start again</button>
@@ -108,11 +108,17 @@ export default {
 </script>
 
 <style>
+.interactiveSpecimen {
+  border: 1px solid black;
+  box-sizing: border-box;
+  max-width: 800px;
+}
+
 .gridContainer {
   border: 1px solid green;
   border-bottom: none;
   height: 200px;
-  width: 800px;
+  width: 100%;
   position: absolute;
   pointer-events: none;
 }
@@ -123,10 +129,12 @@ export default {
   box-sizing: border-box;
 }
 
+.imageContainer {
+  width: 100%;
+}
+
 .image {
-  width: 200px;
-  height: 200px;
-  display: inline-block;
+  width: 25%;
 }
 
 .unselectable {

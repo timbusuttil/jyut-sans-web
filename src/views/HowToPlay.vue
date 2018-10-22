@@ -1,7 +1,7 @@
 <template>
   <div class="howToPlay">
     <h1>how to play</h1>
-    <div class="flexContainer">
+    <div class="howFlexContainer">
       <div v-for="(item, index) in flexItems" class="flexItem" :key="index">
         <img class="featureImage" :src="item.image" :alt="item.alt">
         <p>{{item.text}}</p>
@@ -18,17 +18,17 @@ export default {
     return {
       flexItems: [
         {
-          image: require('../assets/typeface/closedeye.png'),
+          image: require('../assets/typeface/letters/a falling.png'),
           alt: '',
           text: 'Interact with words by clicking on them'
         },
         {
-          image: require('../assets/typeface/closedeye.png'),
+          image: require('../assets/typeface/letters/a rising.png'),
           alt: '',
           text: 'Click on the tone levels to see how tone changes meaning'
         },
         {
-          image: require('../assets/typeface/closedeye.png'),
+          image: require('../assets/typeface/letters/a stable.png'),
           alt: '',
           text: 'Turn the grid on and off at any time'
         }
@@ -48,10 +48,10 @@ export default {
   justify-content: space-around;
 }
 
-.flexContainer {
+.howFlexContainer {
   display: flex;
   width: 100%;
-  height: 200px;
+  /* height: 200px; */
 }
 
 .flexItem {
@@ -61,8 +61,8 @@ export default {
 }
 
 .featureImage {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  max-width: 150px;
   border: 3px solid black;
   border-radius: 100%;
   object-fit: contain;

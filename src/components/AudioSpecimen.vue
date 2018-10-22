@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="audio">
     <h3>click on the numbers to hear the tones</h3>
-    <div class="flexContainer">
+    <div class="audioFlexContainer">
       <div v-for="(sound, index) in audioSamples" :key="index" class="fan">
-        <img :src="sound.isPlaying ? sound.activeImage : sound.inactiveImage" style="width: 100px; height: 100px;">
+        <img class="fanImage" :src="sound.isPlaying ? sound.activeImage : sound.inactiveImage">
         <button :class="sound.isPlaying ? 'audioButton audioButtonActive' : 'audioButton audioButtonInactive'" type="button" name="button" @click="playSound(index)">{{index}}</button>
         <transition name="fade">
           <p v-show="sound.isPlaying">{{ sound.word }}</p>
@@ -81,7 +81,11 @@ export default {
 </script>
 
 <style>
-.flexContainer {
+.audio {
+  width: 100%;
+}
+
+.audioFlexContainer {
   display: flex;
 }
 
@@ -89,6 +93,11 @@ export default {
   height: 300px;
   text-align: center;
   flex-grow: 1;
+}
+
+.fanImage {
+  width: 100px;
+  height: 100px;
 }
 
 .audioButton {
@@ -111,7 +120,6 @@ export default {
 }
 
 .audioButtonActive {
-  background: green;
   background: #DFB8AA;
   color: #F17236;
   transform: scale(1.15);

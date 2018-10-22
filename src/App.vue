@@ -21,25 +21,24 @@
         </div>
         <div style="margin-top: 20px; text-align: center;">
           <router-link to="/about" style="margin-top: 20px;">About</router-link>
-          <p>{{this.$route.path}}</p>
-          <p>{{this.currentRouteIndex}}</p>
+          <!-- <p>{{this.$route.path}}</p>
+          <p>{{this.currentRouteIndex}}</p> -->
         </div>
       </div>
     </div>
     <div class="mobile">
-      <Home />
-      <p><b>please use a larger device!</b></p>
+      <MobileHome />
     </div>
   </div>
 </template>
 
 <script>
-import Home from '@/views/Home.vue'
+import MobileHome from '@/views/MobileHome.vue'
 
 export default {
   name: 'app',
   components: {
-    Home
+    MobileHome
   },
   data () {
     return {
@@ -262,7 +261,8 @@ export default {
   position: relative;
   margin: auto auto;
   height: 620px;
-  width: 960px;
+  /* width: 1060px; */
+  width: 100%;
   /* max-width: 1400px; */
 }
 

@@ -4,9 +4,6 @@
       <!-- <div class="label">
         <p>An interview with two bilingual first generation Chinese diaspora about their lived experience of negotiating spoken Cantonese Chinese-Australian</p>
       </div> -->
-      <!-- <iframe class="video" width="640" height="360"
-        src="https://www.youtube.com/embed/tgbNymZ7vqY">
-      </iframe> -->
       <p style="position: absolute; padding: 100px;">loading</p>
       <iframe src="https://player.vimeo.com/video/294314377?color=ffffff&byline=0&portrait=0&title=0&callback=videoLoaded" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
@@ -31,9 +28,9 @@ export default {
 }
 
 .videoContainer {
-  /* background: red; */
-  /* width: 960px; */
-  height: 540px;
+  margin: auto;
+  max-width: 800px;
+  height: 100%;
   position: relative;
 }
 
