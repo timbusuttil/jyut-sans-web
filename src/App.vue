@@ -1,35 +1,46 @@
 <template>
   <div id="app" :style="{background: this.backgroundColour}">
-    <div class="outerContainer">
-      <div class="innerContainer" :style="{borderColor: this.borderColour, boxShadow: this.boxShadow}">
-        <router-link to="/">
-          <img class="nav rectangle" id="tl" :src="navImages.project.isHovered ? navImages.project.images[currentRouteIndex].hovered : navImages.project.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.project, true)" @mouseleave="navHover(navImages.project, false)">
-        </router-link>
-        <router-link to="/typeface">
-          <img class="nav circle" id="tr" :src="navImages.typeface.isHovered ? navImages.typeface.images[currentRouteIndex].hovered : navImages.typeface.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.typeface, true)" @mouseleave="navHover(navImages.typeface, false)">
-        </router-link>
-        <router-link to="/how-to-play">
-          <img class="nav rounded" id="br" :src="navImages.play.isHovered ? navImages.play.images[currentRouteIndex].hovered : navImages.play.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.play, true)" @mouseleave="navHover(navImages.play, false)">
-        </router-link>
-        <router-link to="/interview">
-          <img class="nav circle" id="bl" :src="navImages.video.isHovered ? navImages.video.images[currentRouteIndex].hovered : navImages.video.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.video, true)" @mouseleave="navHover(navImages.video, false)">
-        </router-link>
-        <!-- <keep-alive> -->
-        <router-view/>
-        <!-- </keep-alive> -->
+    <div class="desktop">
+      <div class="outerContainer">
+        <div class="innerContainer" :style="{borderColor: this.borderColour, boxShadow: this.boxShadow}">
+          <router-link to="/">
+            <img class="nav rectangle" id="tl" :src="navImages.project.isHovered ? navImages.project.images[currentRouteIndex].hovered : navImages.project.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.project, true)" @mouseleave="navHover(navImages.project, false)">
+          </router-link>
+          <router-link to="/typeface">
+            <img class="nav circle" id="tr" :src="navImages.typeface.isHovered ? navImages.typeface.images[currentRouteIndex].hovered : navImages.typeface.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.typeface, true)" @mouseleave="navHover(navImages.typeface, false)">
+          </router-link>
+          <router-link to="/how-to-play">
+            <img class="nav rounded" id="br" :src="navImages.play.isHovered ? navImages.play.images[currentRouteIndex].hovered : navImages.play.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.play, true)" @mouseleave="navHover(navImages.play, false)">
+          </router-link>
+          <router-link to="/interview">
+            <img class="nav circle" id="bl" :src="navImages.video.isHovered ? navImages.video.images[currentRouteIndex].hovered : navImages.video.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.video, true)" @mouseleave="navHover(navImages.video, false)">
+          </router-link>
+          <!-- <keep-alive> -->
+          <router-view/>
+          <!-- </keep-alive> -->
+        </div>
+        <div style="margin-top: 20px; text-align: center;">
+          <router-link to="/about" style="margin-top: 20px;">About</router-link>
+          <p>{{this.$route.path}}</p>
+          <p>{{this.currentRouteIndex}}</p>
+        </div>
       </div>
-      <div style="margin-top: 20px; text-align: center;">
-        <router-link to="/about" style="margin-top: 20px;">About</router-link>
-        <p>{{this.$route.path}}</p>
-        <p>{{this.currentRouteIndex}}</p>
-      </div>
+    </div>
+    <div class="mobile">
+      <Home />
+      <p><b>please use a larger device!</b></p>
     </div>
   </div>
 </template>
 
 <script>
+import Home from '@/views/Home.vue'
+
 export default {
   name: 'app',
+  components: {
+    Home
+  },
   data () {
     return {
       backgroundColours: ['#dfb8aa', '#f17236', '#FADD75', '#FADD75', '#fcc700', '#dfb8aa'],
@@ -230,7 +241,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: lightgreen;
   width: 100%;
   height: 100vh;
   padding: 50px 100px;
@@ -238,11 +248,22 @@ export default {
   display: flex;
 }
 
+.desktop {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.mobile {
+
+}
+
 .outerContainer {
   position: relative;
   margin: auto auto;
   height: 620px;
   width: 960px;
+  /* max-width: 1400px; */
 }
 
 .innerContainer {
@@ -295,5 +316,17 @@ export default {
 #br {
   bottom: -40px;
   right: -40px;
+}
+
+@media screen and (max-width: 769.98px) {
+  .desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .mobile {
+    display: none;
+  }
 }
 </style>
