@@ -5,19 +5,19 @@
         <img :src="require('@/assets/typeface/letters/' + character.src)" class="tileImage">
       </div>
     </div>
-    <h3>take a closer look</h3>
+    <h3>Take a closer look</h3>
     <div class="hoverToggles">
-      <div>
-        <img :src="currentHover === 'rising' ? require('@/assets/typeface/openeye.png') : require('@/assets/typeface/closedeye.png')" class="toggle" @mouseover="focusCharacters('rising')" @mouseleave="focusCharacters('all')">
-        <h3>rising vowels</h3>
+      <div class="hoverToggle">
+        <img :src="currentHover === 'rising' ? require('@/assets/typeface/openeye.png') : require('@/assets/typeface/closedeye.png')" class="toggleImage" @mouseover="focusCharacters('rising')" @mouseleave="focusCharacters('all')">
+        <h3>Rising vowels</h3>
       </div>
-      <div>
-        <img :src="currentHover === 'falling' ? require('@/assets/typeface/openeye.png') : require('@/assets/typeface/closedeye.png')" class="toggle" @mouseover="focusCharacters('falling')" @mouseleave="focusCharacters('all')">
-        <h3>falling vowels</h3>
+      <div class="hoverToggle">
+        <img :src="currentHover === 'falling' ? require('@/assets/typeface/openeye.png') : require('@/assets/typeface/closedeye.png')" class="toggleImage" @mouseover="focusCharacters('falling')" @mouseleave="focusCharacters('all')">
+        <h3>Falling vowels</h3>
       </div>
-      <div>
-        <img :src="currentHover === 'stable' ? require('@/assets/typeface/openeye.png') : require('@/assets/typeface/closedeye.png')" class="toggle" @mouseover="focusCharacters('stable')" @mouseleave="focusCharacters('all')">
-        <h3>stable vowels</h3>
+      <div class="hoverToggle">
+        <img :src="currentHover === 'stable' ? require('@/assets/typeface/openeye.png') : require('@/assets/typeface/closedeye.png')" class="toggleImage" @mouseover="focusCharacters('stable')" @mouseleave="focusCharacters('all')">
+        <h3>Stable vowels</h3>
       </div>
     </div>
     <div class="typefaceCopyContainer">
@@ -260,7 +260,6 @@ export default {
 
 <style>
 .hover {
-  border: 1px solid blue;
   max-width: 700px;
 }
 
@@ -269,6 +268,7 @@ export default {
   height: 280px;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
+  margin-bottom: 60px;
 }
 
 .tileImage {
@@ -297,12 +297,19 @@ export default {
   margin-top: 20px;
 }
 
-.toggle {
-  width: 80px;
-  height: 80px;
+.hoverToggle {
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toggleImage {
+  width: 90px;
+  height: 90px;
 }
 
 .typefaceCopyContainer {
-  margin: 100px 0;
+  margin: 150px 0 60px 0;
 }
 </style>

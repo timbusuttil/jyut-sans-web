@@ -19,11 +19,11 @@
           <router-view/>
           <!-- </keep-alive> -->
         </div>
-        <div style="margin-top: 20px; text-align: center;">
-          <router-link to="/about" style="margin-top: 20px;">About</router-link>
+        <!-- <div style="margin-top: 20px; text-align: center;"> -->
+          <!-- <router-link to="/about" style="margin-top: 20px;">About</router-link> -->
           <!-- <p>{{this.$route.path}}</p>
           <p>{{this.currentRouteIndex}}</p> -->
-        </div>
+        <!-- </div> -->
       </div>
     </div>
     <div class="mobile">
@@ -242,10 +242,56 @@ export default {
 
   width: 100%;
   height: 100vh;
-  padding: 50px 100px;
+  padding: 75px 125px;
   box-sizing: border-box;
   display: flex;
 }
+
+/* begin typography */
+@font-face {
+  font-family: 'value-serif-bold';
+  src: url('assets/fonts/value-serif-bold.eot');
+  src: url('assets/fonts/value-serif-bold.eot?#iefix') format('embedded-opentype'),
+       url('assets/fonts/value-serif-bold.woff') format('woff'),
+       url('assets/fonts/value-serif-bold.woff2') format('woff2'),
+       url('assets/fonts/value-serif-bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'kabel-black';
+  src: url('assets/fonts/Kabel-Black.otf');
+}
+
+h1 {
+  font-family: 'kabel-black';
+  font-size: 64px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 20px 0;
+}
+
+h2 {
+  font-family: 'kabel-black';
+  font-size: 59px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 0;
+}
+
+h3 {
+  font-family: 'value-serif-bold';
+  font-size: 21px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-family: 'value-serif-bold';
+  font-size: 16px;
+}
+/*  end typography  */
 
 .desktop {
   width: 100%;
@@ -260,7 +306,8 @@ export default {
 .outerContainer {
   position: relative;
   margin: auto auto;
-  height: 620px;
+  /* height: 620px; */
+  height: 100%;
   /* width: 1060px; */
   width: 100%;
   /* max-width: 1400px; */
@@ -270,7 +317,7 @@ export default {
   overflow-y: scroll;
   height: 100%;
   box-sizing: border-box;
-  padding: 50px;
+  padding: 100px 100px;
   border-width: 3px;
   border-style: solid;
 }

@@ -90,7 +90,7 @@ export default {
 }
 
 .fan {
-  height: 300px;
+  height: 200px;
   text-align: center;
   flex-grow: 1;
 }

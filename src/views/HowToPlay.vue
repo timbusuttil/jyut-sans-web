@@ -1,6 +1,6 @@
 <template>
   <div class="howToPlay">
-    <h1>how to play</h1>
+    <h2>How to play</h2>
     <div class="howFlexContainer">
       <div v-for="(item, index) in flexItems" class="flexItem" :key="index">
         <img class="featureImage" :src="item.image" :alt="item.alt">
