@@ -3,7 +3,8 @@
     <h2>How to play</h2>
     <div class="howFlexContainer">
       <div v-for="(item, index) in flexItems" class="flexItem" :key="index">
-        <img class="featureImage" :src="item.image" :alt="item.alt">
+        <!-- <img class="featureImage" :src="item.image" :alt="item.alt"> -->
+        <h1>{{index+1}}</h1>
         <p>{{item.text}}</p>
       </div>
     </div>
@@ -18,18 +19,18 @@ export default {
     return {
       flexItems: [
         {
-          image: require('../assets/typeface/letters/a falling.png'),
-          alt: '',
+          // image: require('../assets/typeface/letters/a falling.png'),
+          // alt: '',
           text: 'Interact with words by clicking on them'
         },
         {
-          image: require('../assets/typeface/letters/a rising.png'),
-          alt: '',
+          // image: require('../assets/typeface/letters/a rising.png'),
+          // alt: '',
           text: 'Click on the tone levels to see how tone changes meaning'
         },
         {
-          image: require('../assets/typeface/letters/a stable.png'),
-          alt: '',
+          // image: require('../assets/typeface/letters/a stable.png'),
+          // alt: '',
           text: 'Turn the grid on and off at any time'
         }
       ]
