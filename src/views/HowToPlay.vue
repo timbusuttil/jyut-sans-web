@@ -8,7 +8,10 @@
         <p>{{item.text}}</p>
       </div>
     </div>
-    <router-link to="/interactive">play</router-link>
+    <!-- <router-link to="/interactive">
+      <img class="startButton" :src="require('@/assets/nav/start.png')" alt="Start!">
+    </router-link> -->
+    <img class="startButton" :src="require('@/assets/nav/start.png')" alt="Start!" @click="navigate('/interactive')">
   </div>
 </template>
 
@@ -34,6 +37,11 @@ export default {
           text: 'Turn the grid on and off at any time'
         }
       ]
+    }
+  },
+  methods: {
+    navigate (path) {
+      this.$router.push(path)
     }
   }
 }
@@ -67,5 +75,16 @@ export default {
   border: 3px solid black;
   border-radius: 100%;
   object-fit: contain;
+}
+
+.startButton {
+  width: 200px;
+  margin: 0 auto;
+  transition: 0.2s;
+}
+
+.startButton:hover {
+  transform: translateX(10px);
+  cursor: pointer;
 }
 </style>
