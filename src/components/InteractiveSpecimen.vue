@@ -27,53 +27,45 @@ export default {
       showGrid: true,
       objects: [
         {
-          styles: ['orange', 'white', 'pink', 'purple', 'gray'],
-          images: ['b.png', 'c.png', 'd.png', 'f.png', 'g.png'],
-          words: ['the cat', 'my shoes', 'a bee', 'a spider', 'my dog'],
-          sounds: [
-            new Howl({ src: require('@/assets/play/sound/body.wav') }),
-            new Howl({ src: require('@/assets/play/sound/go up.wav') }),
-            new Howl({ src: require('@/assets/play/sound/grape.wav') }),
-            new Howl({ src: require('@/assets/play/sound/hurty.wav') }),
-            new Howl({ src: require('@/assets/play/sound/I(ME).wav') })
-          ],
-          currentIndex: 0,
-          isHovered: false
-        },
-        {
-          styles: ['orange', 'white', 'pink', 'purple'],
-          images: ['b.png', 'c.png', 'd.png', 'f.png'],
-          words: ['sat on', 'ate', 'frightened', 'destroyed'],
-          sounds: [
-            new Howl({ src: require('@/assets/play/sound/body.wav') }),
-            new Howl({ src: require('@/assets/play/sound/go up.wav') }),
-            new Howl({ src: require('@/assets/play/sound/grape.wav') }),
-            new Howl({ src: require('@/assets/play/sound/hurty.wav') })
-          ],
-          currentIndex: 0,
-          isHovered: false
-        },
-        {
-          styles: ['orange', 'white', 'pink', 'purple'],
-          images: ['b.png', 'c.png', 'd.png', 'f.png'],
-          words: ['the delicious', 'the scary', 'the big', 'the small'],
-          sounds: [
-            new Howl({ src: require('@/assets/play/sound/body.wav') }),
-            new Howl({ src: require('@/assets/play/sound/go up.wav') }),
-            new Howl({ src: require('@/assets/play/sound/grape.wav') }),
-            new Howl({ src: require('@/assets/play/sound/hurty.wav') })
-          ],
-          currentIndex: 0,
-          isHovered: false
-        },
-        {
-          styles: ['orange', 'white', 'pink'],
           images: ['b.png', 'c.png', 'd.png'],
-          words: ['horse', 'apple', 'goose'],
+          words: ['I', 'starve', 'moth'],
+          sounds: [
+            new Howl({ src: require('@/assets/play/sound/I(ME).wav') }),
+            new Howl({ src: require('@/assets/play/sound/starve.wav') }),
+            new Howl({ src: require('@/assets/play/sound/moth.wav') })
+          ],
+          currentIndex: 0,
+          isHovered: false
+        },
+        {
+          images: ['b.png', 'c.png', 'd.png'],
+          words: ['go up', 'hurt', 'want'],
+          sounds: [
+            new Howl({ src: require('@/assets/play/sound/go up.wav') }),
+            new Howl({ src: require('@/assets/play/sound/hurty.wav') }),
+            new Howl({ src: require('@/assets/play/sound/want.wav') })
+          ],
+          currentIndex: 0,
+          isHovered: false
+        },
+        {
+          images: ['b.png', 'c.png', 'd.png'],
+          words: ['leak', 'twist', 'stairs'],
+          sounds: [
+            new Howl({ src: require('@/assets/play/sound/leak.wav') }),
+            new Howl({ src: require('@/assets/play/sound/twist.wav') }),
+            new Howl({ src: require('@/assets/play/sound/stairs.wav') })
+          ],
+          currentIndex: 0,
+          isHovered: false
+        },
+        {
+          images: ['b.png', 'c.png', 'd.png'],
+          words: ['body', 'grape', 'ladder'],
           sounds: [
             new Howl({ src: require('@/assets/play/sound/body.wav') }),
-            new Howl({ src: require('@/assets/play/sound/go up.wav') }),
-            new Howl({ src: require('@/assets/play/sound/grape.wav') })
+            new Howl({ src: require('@/assets/play/sound/grape.wav') }),
+            new Howl({ src: require('@/assets/play/sound/ladder.wav') })
           ],
           currentIndex: 0,
           isHovered: false
