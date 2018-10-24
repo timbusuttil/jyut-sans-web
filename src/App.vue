@@ -42,8 +42,8 @@ export default {
   },
   data () {
     return {
-      backgroundColours: ['#dfb8aa', '#f17236', '#FADD75', '#FADD75', '#fcc700', '#dfb8aa'],
-      borderColours: ['#440f23', '#fcdd00', '#ffffff', '#ffffff', '#f17236', '#440f23'],
+      backgroundColours: ['#dfb8aa', '#f17236', '#b5d9a9', '#b5d9a9', '#fcc700', '#dfb8aa'],
+      borderColours: ['#440f23', '#fcdd00', '#2d3c28', '#2d3c28', '#f17236', '#440f23'],
       navImages: {
         project: {
           isHovered: false,
@@ -62,26 +62,20 @@ export default {
             },
             {
               // howToPlay
-              unhovered: require('@/assets/nav/project-typeface.png'), // replace with correct asset
-              hovered: require('@/assets/nav/project-typeface-hover.png'), // replace with correct asset
+              unhovered: require('@/assets/nav/project-play.png'),
+              hovered: require('@/assets/nav/project-play.png'), // replace with correct asset
               isHovered: false
             },
             {
               // play
-              unhovered: require('@/assets/nav/project-typeface.png'), // replace with correct asset
-              hovered: require('@/assets/nav/project-typeface-hover.png'), // replace with correct asset
+              unhovered: require('@/assets/nav/project-play.png'),
+              hovered: require('@/assets/nav/project-play.png'), // replace with correct asset
               isHovered: false
             },
             {
               // video
               unhovered: require('@/assets/nav/project-video.png'),
               hovered: require('@/assets/nav/project-video-hover.png'),
-              isHovered: false
-            },
-            {
-              // about
-              unhovered: require('@/assets/nav/project-typeface.png'), // replace with correct asset
-              hovered: require('@/assets/nav/project-typeface-hover.png'), // replace with correct asset
               isHovered: false
             }
           ]
@@ -103,26 +97,20 @@ export default {
             },
             {
               // howToPlay
-              unhovered: require('@/assets/nav/typeface-project.png'), // replace with correct asset
-              hovered: require('@/assets/nav/typeface-project-hover.png'), // replace with correct asset
+              unhovered: require('@/assets/nav/typeface-play.png'),
+              hovered: require('@/assets/nav/typeface-play-hover.png'),
               isHovered: false
             },
             {
               // play
-              unhovered: require('@/assets/nav/typeface-project.png'), // replace with correct asset
-              hovered: require('@/assets/nav/typeface-project-hover.png'), // replace with correct asset
+              unhovered: require('@/assets/nav/typeface-play.png'),
+              hovered: require('@/assets/nav/typeface-play-hover.png'),
               isHovered: false
             },
             {
               // video
               unhovered: require('@/assets/nav/typeface-video.png'),
               hovered: require('@/assets/nav/typeface-video-hover.png'),
-              isHovered: false
-            },
-            {
-              // about
-              unhovered: require('@/assets/nav/typeface-project.png'), // replace with correct asset
-              hovered: require('@/assets/nav/typeface-project-hover.png'), // replace with correct asset
               isHovered: false
             }
           ]
@@ -144,26 +132,20 @@ export default {
             },
             {
               // howToPlay
-              unhovered: require('@/assets/nav/play-project.png'), // replace with correct asset
-              hovered: require('@/assets/nav/play-project-hover.png'), // replace with correct asset
+              unhovered: require('@/assets/nav/play-play.png'),
+              hovered: require('@/assets/nav/play-play.png'),
               isHovered: false
             },
             {
               // play
-              unhovered: require('@/assets/nav/play-project.png'), // replace with correct asset
-              hovered: require('@/assets/nav/play-project-hover.png'), // replace with correct asset
+              unhovered: require('@/assets/nav/play-play.png'),
+              hovered: require('@/assets/nav/play-play.png'),
               isHovered: false
             },
             {
               // video
               unhovered: require('@/assets/nav/play-video.png'),
               hovered: require('@/assets/nav/play-video-hover.png'),
-              isHovered: false
-            },
-            {
-              // about
-              unhovered: require('@/assets/nav/play-project.png'), // replace with correct asset
-              hovered: require('@/assets/nav/play-project-hover.png'), // replace with correct asset
               isHovered: false
             }
           ]
@@ -185,14 +167,14 @@ export default {
             },
             {
               // howToPlay
-              unhovered: require('@/assets/nav/video-project.png'), // replace with correct asset
-              hovered: require('@/assets/nav/video-project-hover.png'), // replace with correct asset
+              unhovered: require('@/assets/nav/video-play.png'),
+              hovered: require('@/assets/nav/video-play-hover.png'),
               isHovered: false
             },
             {
               // play
-              unhovered: require('@/assets/nav/video-project.png'), // replace with correct asset
-              hovered: require('@/assets/nav/video-project-hover.png'), // replace with correct asset
+              unhovered: require('@/assets/nav/video-play.png'),
+              hovered: require('@/assets/nav/video-play-hover.png'),
               isHovered: false
             },
             {
@@ -200,15 +182,9 @@ export default {
               unhovered: require('@/assets/nav/video-video.png'),
               hovered: require('@/assets/nav/video-video.png'),
               isHovered: false
-            },
-            {
-              // about
-              unhovered: require('@/assets/nav/video-project.png'), // replace with correct asset
-              hovered: require('@/assets/nav/video-project-hover.png'), // replace with correct asset
-              isHovered: false
             }
           ]
-        },
+        }
       }
     }
   },
