@@ -1,11 +1,11 @@
 <template>
   <div class="interactiveSpecimen">
-    <!-- <div class="gridContainer" v-show="showGrid">
+    <div class="gridContainer" v-show="showGrid">
       <div class="gridRow"></div>
       <div class="gridRow"></div>
       <div class="gridRow"></div>
       <div class="gridRow"></div>
-    </div> -->
+    </div>
     <div class="imageContainer">
       <img v-for="(object, index) in objects" :key="index" class="image" :src="require('@/assets/typeface/letters/' + getCurrentImage(index))" @click="incrementWord(index)" @mouseover="setHover(index, true)" @mouseleave="setHover(index, false)">
     </div>
@@ -111,13 +111,16 @@ export default {
   border: 1px solid black;
   box-sizing: border-box;
   max-width: 800px;
+  width: 100%;
 }
 
 .gridContainer {
-  border: 1px solid green;
+  border: 1px solid #b5d9a9;
   border-bottom: none;
   height: 200px;
   width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
   position: absolute;
   pointer-events: none;
 }
