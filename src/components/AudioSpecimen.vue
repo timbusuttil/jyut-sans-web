@@ -20,6 +20,7 @@ export default {
   name: 'AudioSpecimen',
   data () {
     return {
+      context: new AudioContext(),
       audioSamples: [
         {
           sound: new Howl({ src: require('@/assets/typeface/sound/divide.wav'),  onplay: () => this.soundStarted(0), onend: () => this.soundEnded(0) }),
@@ -68,6 +69,7 @@ export default {
   },
   methods: {
     playSound (index) {
+      this.resumeAudioContext()
       this.audioSamples[index].sound.play()
     },
     soundStarted (index) {
@@ -75,7 +77,12 @@ export default {
     },
     soundEnded (index) {
       this.audioSamples[index].isPlaying = false
-    }
+    },
+    resumeAudioContext () {
+      if (this.context.state === 'suspended') {
+        this.context.resume()
+      }
+    },
   }
 }
 </script>

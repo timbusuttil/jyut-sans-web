@@ -25,6 +25,7 @@ export default {
   data () {
     return {
       showGrid: true,
+      context: new AudioContext(),
       objects: [
         {
           images: ['b.png', 'c.png', 'd.png'],
@@ -76,7 +77,13 @@ export default {
   methods: {
     incrementWord (i) {
       this.objects[i].currentIndex < this.objects[i].words.length-1 ? this.objects[i].currentIndex ++ : this.objects[i].currentIndex = 0
+      this.resumeAudioContext()
       this.objects[i].sounds[this.objects[i].currentIndex].play()
+    },
+    resumeAudioContext () {
+      if (this.context.state === 'suspended') {
+        this.context.resume()
+      }
     },
     getCurrentString (i) {
       return this.objects[i].words[this.objects[i].currentIndex]
