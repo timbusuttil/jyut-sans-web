@@ -12,7 +12,7 @@
     <button type="button" name="button" @click="resetIndices">start again</button>
     <button type="button" name="button" @click="toggleGrid" style="float: right;">toggle grid</button>
     <h2 class="unselectable">
-      <span v-for="(object, index) in objects" :key="index" class="word" :style="object.isHovered ? 'border-bottom: 2px solid black;' : 'border: none'">&#8239;{{getCurrentString(index)}}&#8239;</span>
+      <span v-for="(object, index) in objects" :key="index" class="word" :style="object.isHovered ? 'border-bottom: 2px solid black;' : 'border: none'" v-html="getCurrentStringHtml(index)"></span>
     </h2>
   </div>
 </template>
@@ -91,9 +91,20 @@ export default {
       } else if (this.objects[2].currentIndex === 2 && this.objects[3].currentIndex === 0 && i === 2) {
         return 'stairs'
       } else if (this.objects[2].currentIndex === 2 && this.objects[3].currentIndex === 0 && i === 3) {
-        return null
+        return ''
       } else {
         return this.objects[i].words[this.objects[i].currentIndex]
+      }
+    },
+    getCurrentStringHtml (i) {
+      if (i === 1 && this.objects[0].currentIndex !== 0) {
+        return `&thinsp;${this.objects[i].words[this.objects[i].currentIndex+3]}&thinsp;`
+      } else if (this.objects[2].currentIndex === 2 && this.objects[3].currentIndex === 0 && i === 2) {
+        return `&thinsp;stairs&thinsp;`
+      } else if (this.objects[2].currentIndex === 2 && this.objects[3].currentIndex === 0 && i === 3) {
+        return ''
+      } else {
+        return `&thinsp;${this.objects[i].words[this.objects[i].currentIndex]}&thinsp;`
       }
     },
     getCurrentImage (i) {
