@@ -37,12 +37,12 @@ export default {
       characters: [
         {
           char: 'a',
-          src: 'a rising.png',
+          src: 'a rise.png',
           class: 'character rising'
         },
         {
           char: 'a',
-          src: 'a falling.png',
+          src: 'a fall.png',
           class: 'character falling'
         },
         {
@@ -67,12 +67,12 @@ export default {
         },
         {
           char: 'e',
-          src: 'e rising.png',
+          src: 'e rise.png',
           class: 'character rising'
         },
         {
           char: 'e',
-          src: 'e falling.png',
+          src: 'e fall.png',
           class: 'character falling'
         },
         {
@@ -97,12 +97,12 @@ export default {
         },
         {
           char: 'i',
-          src: 'i rising.png',
+          src: 'i rise.png',
           class: 'character rising'
         },
         {
           char: 'i',
-          src: 'i falling.png',
+          src: 'i fall.png',
           class: 'character falling'
         },
         {
@@ -137,12 +137,12 @@ export default {
         },
         {
           char: 'o',
-          src: 'o rising.png',
+          src: 'o rise.png',
           class: 'character rising'
         },
         {
           char: 'o',
-          src: 'o falling.png',
+          src: 'o fall.png',
           class: 'character falling'
         },
         {
@@ -177,7 +177,7 @@ export default {
         },
         {
           char: 'u',
-          src: 'u rising.png',
+          src: 'u rise.png',
           class: 'character rising'
         },
         {
@@ -187,7 +187,7 @@ export default {
         },
         {
           char: 'u',
-          src: 'u falling.png',
+          src: 'u fall.png',
           class: 'character falling'
         },
         {
@@ -222,7 +222,7 @@ export default {
         },
         {
           char: '?',
-          src: 'question.png',
+          src: 'questionmark.png',
           class: 'character'
         },
         {
@@ -269,6 +269,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   margin-bottom: 60px;
+  border: 1px solid black;
 }
 
 .tileImage {
@@ -280,13 +281,17 @@ export default {
   background: rgb(241, 114, 54);
   width: 70px;
   height: 70px;
-  /* border: 1px solid black; */
   transition: 0.2s;
+  border: 1px solid black;
+  box-sizing: border-box;
 }
 
 .character:hover {
-  transform: scale(1.5);
+  transform: scale(2);
   z-index: 2;
+  /* border-top: 1px solid black; */
+  /* border-left: 1px solid black; */
+  border: 1px solid black;
 }
 
 .hoverToggles {
