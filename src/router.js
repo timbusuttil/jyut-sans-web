@@ -12,11 +12,6 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    },
-    {
       path: '/typeface',
       name: 'typeface',
       component: () => import(/* webpackChunkName: "typeface" */ './views/Typeface.vue')

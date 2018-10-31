@@ -42,8 +42,8 @@ export default {
   },
   data () {
     return {
-      backgroundColours: ['#dfb8aa', '#f17236', '#b5d9a9', '#b5d9a9', '#fcc700', '#dfb8aa'],
-      borderColours: ['#440f23', '#fcdd00', '#2d3c28', '#2d3c28', '#f17236', '#440f23'],
+      backgroundColours: ['#dfb8aa', '#f17236', '#b5d9a9', '#b5d9a9', '#fcc700'],
+      borderColours: ['#440f23', '#fcdd00', '#2d3c28', '#2d3c28', '#f17236'],
       navImages: {
         project: {
           isHovered: false,
@@ -190,7 +190,7 @@ export default {
   },
   computed: {
     currentRouteIndex () {
-      return ['/', '/typeface', '/how-to-play', '/interactive', '/interview', '/about'].indexOf(this.$route.path)
+      return ['/', '/typeface', '/how-to-play', '/interactive', '/interview'].indexOf(this.$route.path)
     },
     backgroundColour () {
       return this.backgroundColours[this.currentRouteIndex]
