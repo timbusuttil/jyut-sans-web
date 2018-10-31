@@ -63,13 +63,13 @@ export default {
             {
               // howToPlay
               unhovered: require('@/assets/nav/project-play.png'),
-              hovered: require('@/assets/nav/project-play.png'), // replace with correct asset
+              hovered: require('@/assets/nav/project-play-hover.png'),
               isHovered: false
             },
             {
               // play
               unhovered: require('@/assets/nav/project-play.png'),
-              hovered: require('@/assets/nav/project-play.png'), // replace with correct asset
+              hovered: require('@/assets/nav/project-play-hover.png'),
               isHovered: false
             },
             {
@@ -302,6 +302,11 @@ p {
 .nav {
   position: absolute;
   z-index: 100;
+  transition: 0.2s;
+}
+
+.nav:hover {
+  transform: scale(1.05);
 }
 
 .rectangle {
@@ -327,6 +332,10 @@ p {
   transform: rotate(11deg);
 }
 
+#tl:hover {
+  transform: rotate(11deg) scale(1.05);
+}
+
 #tr {
   top: -40px;
   right: -40px;
@@ -340,6 +349,11 @@ p {
 #br {
   bottom: -40px;
   right: -40px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
 }
 
 @media screen and (max-width: 769.98px) {
