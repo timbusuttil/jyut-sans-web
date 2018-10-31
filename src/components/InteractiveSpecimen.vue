@@ -40,7 +40,7 @@ export default {
         },
         {
           images: ['b.png', 'c.png', 'd.png'],
-          words: ['go up', 'hurt', 'want'],
+          words: ['go up the', 'hurt the', 'want the', 'goes up the', 'hurts the', 'wants the'],
           sounds: [
             new Howl({ src: require('@/assets/play/sound/go up.wav') }),
             new Howl({ src: require('@/assets/play/sound/hurty.wav') }),
@@ -76,7 +76,7 @@ export default {
   },
   methods: {
     incrementWord (i) {
-      this.objects[i].currentIndex < this.objects[i].words.length-1 ? this.objects[i].currentIndex ++ : this.objects[i].currentIndex = 0
+      this.objects[i].currentIndex < 2 ? this.objects[i].currentIndex ++ : this.objects[i].currentIndex = 0
       this.resumeAudioContext()
       this.objects[i].sounds[this.objects[i].currentIndex].play()
     },
@@ -86,7 +86,15 @@ export default {
       }
     },
     getCurrentString (i) {
-      return this.objects[i].words[this.objects[i].currentIndex]
+      if (i === 1 && this.objects[0].currentIndex !== 0) {
+        return this.objects[i].words[this.objects[i].currentIndex+3]
+      } else if (this.objects[2].currentIndex === 2 && this.objects[3].currentIndex === 0 && i === 2) {
+        return 'stairs'
+      } else if (this.objects[2].currentIndex === 2 && this.objects[3].currentIndex === 0 && i === 3) {
+        return null
+      } else {
+        return this.objects[i].words[this.objects[i].currentIndex]
+      }
     },
     getCurrentImage (i) {
       return this.objects[i].images[this.objects[i].currentIndex]
