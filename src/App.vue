@@ -283,10 +283,11 @@ p {
   position: relative;
   margin: auto auto;
   /* height: 620px; */
-  height: 100%;
   /* width: 1060px; */
+  height: 100%;
   width: 100%;
-  /* max-width: 1400px; */
+  max-width: 1700px;
+  max-height: 900px;
 }
 
 .innerContainer {
