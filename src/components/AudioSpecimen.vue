@@ -20,7 +20,7 @@ export default {
   name: 'AudioSpecimen',
   data () {
     return {
-      context: new AudioContext(),
+      context: '',
       audioSamples: [
         {
           sound: new Howl({ src: require('@/assets/typeface/sound/divide.wav'),  onplay: () => this.soundStarted(0), onend: () => this.soundEnded(0) }),
@@ -82,7 +82,15 @@ export default {
       if (this.context.state === 'suspended') {
         this.context.resume()
       }
-    },
+    }
+  },
+  created () {
+    let ctx = window.AudioContext || window.webkitAudioContext || false
+    if (ctx) {
+      this.context = new AudioContext
+    } else {
+      console.log("Sorry, but the Web Audio API is not supported by your browser. Please, consider upgrading to the latest version or downloading Google Chrome or Mozilla Firefox")
+    }
   }
 }
 </script>

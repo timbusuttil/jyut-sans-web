@@ -25,15 +25,15 @@ export default {
   data () {
     return {
       showGrid: true,
-      context: new AudioContext(),
+      context: '',
       objects: [
         {
           images: ['b.png', 'c.png', 'd.png'],
-          words: ['I', 'starve', 'moth'],
+          words: ['I', 'The moth', 'Starving' ],
           sounds: [
             new Howl({ src: require('@/assets/play/sound/I(ME).wav') }),
-            new Howl({ src: require('@/assets/play/sound/starve.wav') }),
-            new Howl({ src: require('@/assets/play/sound/moth.wav') })
+            new Howl({ src: require('@/assets/play/sound/moth.wav') }),
+            new Howl({ src: require('@/assets/play/sound/starve.wav') })
           ],
           currentIndex: 0,
           isHovered: false
@@ -51,7 +51,7 @@ export default {
         },
         {
           images: ['b.png', 'c.png', 'd.png'],
-          words: ['leak', 'twist', 'stairs'],
+          words: ['leak', 'twisted', 'building'],
           sounds: [
             new Howl({ src: require('@/assets/play/sound/leak.wav') }),
             new Howl({ src: require('@/assets/play/sound/twist.wav') }),
@@ -62,11 +62,11 @@ export default {
         },
         {
           images: ['b.png', 'c.png', 'd.png'],
-          words: ['body', 'grape', 'ladder'],
+          words: ['ladder', 'body', 'grape'],
           sounds: [
+            new Howl({ src: require('@/assets/play/sound/ladder.wav') }),
             new Howl({ src: require('@/assets/play/sound/body.wav') }),
-            new Howl({ src: require('@/assets/play/sound/grape.wav') }),
-            new Howl({ src: require('@/assets/play/sound/ladder.wav') })
+            new Howl({ src: require('@/assets/play/sound/grape.wav') })
           ],
           currentIndex: 0,
           isHovered: false
@@ -101,6 +101,14 @@ export default {
       this.objects.forEach((object) => {
         object.currentIndex = 0
       })
+    }
+  },
+  created () {
+    let ctx = window.AudioContext || window.webkitAudioContext || false
+    if (ctx) {
+      this.context = new AudioContext
+    } else {
+      console.log("Sorry, but the Web Audio API is not supported by your browser. Please, consider upgrading to the latest version or downloading Google Chrome or Mozilla Firefox")
     }
   }
 }
