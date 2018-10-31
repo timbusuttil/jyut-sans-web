@@ -2,10 +2,10 @@
   <div class="home">
     <h1 style="color: #f17236;">Please Watch Your Tone</h1>
     <div class="homeCopyContainer">
-      <p>Historical and current representations of East Asian identities, particularly Chinese identities, living in Western societies have not always been fairly and ethically portrayed. Some depictions of Chinese identities have ranged from being tokenistic at best and outright racist at worst. In the area of visual communication design, this manifests itself in Asian mimicry typefaces. These can be found in the ‘foreign look’ category of font aggregator websites. Mimicry typefaces only offer an aesthetic imitation of written East Asian script which provides a one dimensional sense of language and culture.</p>
-      <p>As a first-generation Chinese-Australian, I wanted to critique this by designing Jyut Sans as a lingual exploration aiming to convey the richness of the spoken Cantonese language. On one hand, decorative elements of the typeface communicate the characteristics of spoken Cantonese, on the other, the typeface works as a diagrammatic system that graphically depicts its tonal intricacies.</p>
+      <p>Historic and current representations of East Asian identities, particularly Chinese identities, have not always been ethically portrayed in the media of Western societies. Some depictions of Chinese identities have ranged from being tokenistic at best and outright racist at worst. This project, Please Watch Your Tone questions the ethicality of Asian mimicry typefaces. They exist to imitate the aesthetic qualities of East Asian script without any nuance of language or culture.</p>
+      <p>To critique this aspect of the visual communication design world, the project presents an alternative typeface, Jyut Sans, which diagrammatically portrays Cantonese tonal complexities. On one hand, decorative elements of the typeface communicate the characteristics of spoken Cantonese. On the other hand, the typeface works as a diagrammatic system that graphically depicts its tonal intricacies.</p>
     </div>
-    <p class="credits">Design by Wilson Leung&emsp;|&emsp;Site by Tim Busuttil</p>
+    <p class="credits">Design by <a href="https://wilson-leung.com/" target="_blank">Wilson Leung</a>&emsp;|&emsp;Site by Tim Busuttil</p>
   </div>
 </template>
 
@@ -16,6 +16,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* margin: -100px 0; */
 }
 
 .homeCopyContainer {
@@ -23,5 +24,6 @@
 }
 
 .credits {
+  margin-top: 50px;
 }
 </style>
