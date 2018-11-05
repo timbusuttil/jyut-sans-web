@@ -1,16 +1,18 @@
 <template>
   <div class="interactiveSpecimen">
-    <div class="gridContainer" v-show="showGrid">
-      <div class="gridRow"></div>
-      <div class="gridRow"></div>
-      <div class="gridRow"></div>
-      <div class="gridRow"></div>
+    <div class="specimenContainer">
+      <div class="gridContainer" v-show="showGrid">
+        <div class="gridRow"></div>
+        <div class="gridRow"></div>
+        <div class="gridRow"></div>
+        <div class="gridRow"></div>
+      </div>
+      <div class="imageContainer">
+        <img v-for="(object, index) in objects" :key="index" class="image" :src="require('@/assets/play/images/' + getCurrentImage(index))" @click="incrementWord(index)" @mouseover="setHover(index, true)" @mouseleave="setHover(index, false)">
+      </div>
     </div>
-    <div class="imageContainer">
-      <img v-for="(object, index) in objects" :key="index" class="image" :src="require('@/assets/typeface/letters/' + getCurrentImage(index))" @click="incrementWord(index)" @mouseover="setHover(index, true)" @mouseleave="setHover(index, false)">
-    </div>
-    <button type="button" name="button" @click="resetIndices">start again</button>
-    <button type="button" name="button" @click="toggleGrid" style="float: right;">toggle grid</button>
+    <button class="interactiveButton" type="button" name="button" @click="resetIndices">start again</button>
+    <button class="interactiveButton" type="button" name="button" @click="toggleGrid" style="float: right;">{{ showGrid ? 'grid off' : 'grid on' }}</button>
     <h2 class="unselectable">
       <span v-for="(object, index) in objects" :key="index" class="word" :style="object.isHovered ? 'border-bottom: 2px solid black;' : 'border: none'" v-html="getCurrentStringHtml(index)"></span>
     </h2>
@@ -28,7 +30,8 @@ export default {
       context: '',
       objects: [
         {
-          images: ['b.png', 'c.png', 'd.png'],
+          images: ['i.png', 'moth.png', 'starve.png'],
+          hoverImages: ['i hover.png', 'moth hover.png', 'starve hover.png'],
           words: ['I', 'The moth', 'Starving' ],
           sounds: [
             new Howl({ src: require('@/assets/play/sound/I(ME).wav') }),
@@ -39,7 +42,8 @@ export default {
           isHovered: false
         },
         {
-          images: ['b.png', 'c.png', 'd.png'],
+          images: ['go up.png', 'hurt.png', 'want.png'],
+          hoverImages: ['go up hover.png', 'hurt hover.png', 'want hover.png'],
           words: ['go up the', 'hurt the', 'want the', 'goes up the', 'hurts the', 'wants the'],
           sounds: [
             new Howl({ src: require('@/assets/play/sound/go up.wav') }),
@@ -50,18 +54,20 @@ export default {
           isHovered: false
         },
         {
-          images: ['b.png', 'c.png', 'd.png'],
+          images: ['leak.png', 'twist.png', 'building.png'],
+          hoverImages: ['leak hover.png', 'twist hover.png', 'building hover.png'],
           words: ['leak', 'twisted', 'building'],
           sounds: [
             new Howl({ src: require('@/assets/play/sound/leak.wav') }),
             new Howl({ src: require('@/assets/play/sound/twist.wav') }),
-            new Howl({ src: require('@/assets/play/sound/stairs.wav') })
+            new Howl({ src: require('@/assets/play/sound/building.wav') })
           ],
           currentIndex: 0,
           isHovered: false
         },
         {
-          images: ['b.png', 'c.png', 'd.png'],
+          images: ['ladder.png', 'body.png', 'grape.png'],
+          hoverImages: ['ladder hover.png', 'body hover.png', 'grape hover.png'],
           words: ['ladder', 'body', 'grape'],
           sounds: [
             new Howl({ src: require('@/assets/play/sound/ladder.wav') }),
@@ -108,7 +114,11 @@ export default {
       }
     },
     getCurrentImage (i) {
-      return this.objects[i].images[this.objects[i].currentIndex]
+      if (this.objects[i].isHovered) {
+        return this.objects[i].hoverImages[this.objects[i].currentIndex]
+      } else {
+        return this.objects[i].images[this.objects[i].currentIndex]
+      }
     },
     setHover (i, val) {
       this.objects[i].isHovered = val
@@ -127,6 +137,7 @@ export default {
     if (ctx) {
       this.context = new AudioContext
     } else {
+      // eslint-disable-next-line
       console.log("Sorry, but the Web Audio API is not supported by your browser. Please, consider upgrading to the latest version or downloading Google Chrome or Mozilla Firefox")
     }
   }
@@ -135,35 +146,41 @@ export default {
 
 <style>
 .interactiveSpecimen {
-  border: 1px solid black;
-  box-sizing: border-box;
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
 }
 
-.gridContainer {
-  border: 1px solid #b5d9a9;
-  border-bottom: none;
-  height: 200px;
-  width: 100%;
-  max-width: 800px;
-  box-sizing: border-box;
-  position: absolute;
-  pointer-events: none;
-}
-
-.gridRow {
-  border-bottom: 1px solid green;
-  height: 50px;
-  box-sizing: border-box;
+.specimenContainer {
+  /* width: 100%; */
+  display: flex;
+  margin: 0 auto;
+  position: relative;
 }
 
 .imageContainer {
-  width: 100%;
+  margin: 0 auto;
 }
 
 .image {
-  width: 25%;
+  height: 210px;
+  object-fit: contain;
+}
+
+.gridContainer {
+  border: 1px solid #405766;
+  border-bottom: none;
+  height: 200px;
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  pointer-events: none;
+  margin: 3px 0 5px 0;
+}
+
+.gridRow {
+  border-bottom: 1px solid #405766;
+  height: 25%;
+  box-sizing: border-box;
 }
 
 .unselectable {
@@ -171,9 +188,51 @@ export default {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  height: 100px;
+  margin: 0;
 }
 
 .word:hover {
   border-bottom: 2px solid black !important;
+}
+
+.interactiveButton {
+  padding: 5px 15px;
+  background: none;
+  border: 3px solid #405766;
+  color: #405766;
+  border-radius: 20px;
+  margin: 20px 0;
+}
+
+.interactiveButton:hover {
+  background: #405766;
+  color: #b5d9a9;
+}
+
+.interactiveButton:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 1319.98px) {
+  .image {
+    height: 158px;
+  }
+
+  .gridContainer {
+    height: 150px;
+    margin: 3px 0 3px 0;
+  }
+}
+
+@media screen and (max-width: 1119.98px) {
+  .image {
+    height: 63px;
+  }
+
+  .gridContainer {
+    height: 60px;
+    margin: 1.5px 0 1.5px 0;
+  }
 }
 </style>

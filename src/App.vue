@@ -267,6 +267,12 @@ p {
   font-family: 'value-serif-bold';
   font-size: 16px;
 }
+
+button {
+  font-family: 'value-serif-bold';
+  font-size: 16px;
+  text-transform: uppercase;
+}
 /*  end typography  */
 
 .desktop {
