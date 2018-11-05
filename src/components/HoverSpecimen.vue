@@ -1,6 +1,6 @@
 <template>
   <div class="hover">
-    <div class="specimenContainer">
+    <div class="specimenContainer" :style="currentHover !== '' ? 'border-color: rgba(255, 0, 0, 0);' : 'border-color: black;'">
       <div v-for="(character, index) in characters" :key="index" :class="character.class">
         <img :src="require('@/assets/typeface/letters/' + character.src)" class="tileImage">
       </div>
@@ -259,12 +259,8 @@ export default {
 </script>
 
 <style>
-.hover {
-  max-width: 700px;
-}
-
 .specimenContainer {
-  width: 100%;
+  width: 700px;
   height: 280px;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -281,7 +277,7 @@ export default {
   background: rgb(241, 114, 54);
   width: 70px;
   height: 70px;
-  transition: 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
   border: 1px solid black;
   box-sizing: border-box;
 }
@@ -315,6 +311,19 @@ export default {
 }
 
 .typefaceCopyContainer {
-  margin: 150px 0 60px 0;
+  max-width: 700px;
+  margin: 150px auto 60px auto;
+}
+
+@media screen and (min-width: 1500px) {
+  .specimenContainer {
+    width: 1000px;
+    height: 400px;
+  }
+
+  .character {
+    width: 100px;
+    height: 100px;
+  }
 }
 </style>
