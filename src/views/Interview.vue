@@ -29,7 +29,7 @@ export default {
 
 .videoContainer {
   margin: auto;
-  max-width: 800px;
+  /* max-width: 800px; */
   width: 100%;
   height: 100%;
   position: relative;
@@ -52,4 +52,10 @@ export default {
   border-radius: 5px;
   box-shadow: 0 0 0 6px mediumseagreen, 0 0 0 10px black;
 }
+
+/* @media screen and (min-width: 770px) {
+  .videoContainer {
+    max-width: 1100px;
+  }
+} */
 </style>
