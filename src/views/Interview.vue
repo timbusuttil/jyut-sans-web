@@ -1,10 +1,7 @@
 <template>
   <div class="interview">
     <div class="videoContainer">
-      <!-- <div class="label">
-        <p>An interview with two bilingual first generation Chinese diaspora about their lived experience of negotiating spoken Cantonese Chinese-Australian</p>
-      </div> -->
-      <p style="margin: auto;">loading...</p>
+      <img class="loading" :src="require('@/assets/video/loading.png')" alt="loading">
       <iframe src="https://player.vimeo.com/video/297909598?color=ffffff&byline=0&portrait=0&title=0&loop=1&callback=videoLoaded" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
   </div>
@@ -40,22 +37,9 @@ export default {
   border: none;
 }
 
-.label {
-  position: absolute;
-  width: 180px;
-  background: mediumseagreen;
-  top: -90px;
-  right: -100px;
-  text-align: center;
-  padding: 20px;
-  border: 1px solid black;
-  border-radius: 5px;
-  box-shadow: 0 0 0 6px mediumseagreen, 0 0 0 10px black;
+.loading {
+  width: 200px;
+  height: 200px;
+  margin: auto;
 }
-
-/* @media screen and (min-width: 770px) {
-  .videoContainer {
-    max-width: 1100px;
-  }
-} */
 </style>
