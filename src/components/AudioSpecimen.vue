@@ -1,13 +1,23 @@
 <template>
   <div class="audio">
     <h3>click on the numbers to hear the tones</h3>
-    <div class="audioFlexContainer">
-      <div v-for="(sound, index) in audioSamples" :key="index" class="fan">
-        <img class="fanImage" :src="sound.isPlaying ? sound.activeImage : sound.inactiveImage">
-        <button :class="sound.isPlaying ? 'audioButton audioButtonActive' : 'audioButton audioButtonInactive'" type="button" name="button" @click="playSound(index)">{{index}}</button>
-        <transition name="fade">
-          <p v-show="sound.isPlaying">{{ sound.word }}</p>
-        </transition>
+    <div class="outerFlex">
+      <div class="audioContainer">
+        <div class="gridContainer">
+          <div class="gridRow"></div>
+          <div class="gridRow"></div>
+          <div class="gridRow"></div>
+          <div class="gridRow"></div>
+        </div>
+        <h3 class="label" id="high">High</h3>
+        <h3 class="label" id="low">Low</h3>
+        <div v-for="(sound, index) in audioSamples" :key="index" class="fan">
+          <img class="fanImage" :src="sound.isPlaying ? sound.activeImage : sound.inactiveImage" :style="index === 0 ? 'margin-right: -40px' : ''">
+          <button :class="sound.isPlaying ? 'audioButton audioButtonActive' : 'audioButton audioButtonInactive'" type="button" name="button" @click="playSound(index)">{{index+1}}</button>
+          <transition name="fade">
+            <p v-show="sound.isPlaying">{{ sound.word }}</p>
+          </transition>
+        </div>
       </div>
     </div>
   </div>
@@ -25,43 +35,43 @@ export default {
         {
           sound: new Howl({ src: require('@/assets/typeface/sound/divide.wav'),  onplay: () => this.soundStarted(0), onend: () => this.soundEnded(0) }),
           word: 'divide',
-          activeImage: require('@/assets/typeface/openeye.png'),
-          inactiveImage: require('@/assets/typeface/closedeye.png'),
+          activeImage: require('@/assets/typeface/fan/divideclick.png'),
+          inactiveImage: require('@/assets/typeface/fan/divide.png'),
           isPlaying: false
         },
         {
           sound: new Howl({ src: require('@/assets/typeface/sound/flour.wav'), onplay: () => this.soundStarted(1), onend: () => this.soundEnded(1) }),
           word: 'flour',
-          activeImage: require('@/assets/typeface/openeye.png'),
-          inactiveImage: require('@/assets/typeface/closedeye.png'),
+          activeImage: require('@/assets/typeface/fan/flourclick.png'),
+          inactiveImage: require('@/assets/typeface/fan/flour.png'),
           isPlaying: false
         },
         {
           sound: new Howl({ src: require('@/assets/typeface/sound/sleep.wav'), onplay: () => this.soundStarted(2), onend: () => this.soundEnded(2) }),
           word: 'sleep',
-          activeImage: require('@/assets/typeface/openeye.png'),
-          inactiveImage: require('@/assets/typeface/closedeye.png'),
+          activeImage: require('@/assets/typeface/fan/sleepclick.png'),
+          inactiveImage: require('@/assets/typeface/fan/sleep.png'),
           isPlaying: false
         },
         {
           sound: new Howl({ src: require('@/assets/typeface/sound/grave.wav'), onplay: () => this.soundStarted(3), onend: () => this.soundEnded(3) }),
           word: 'grave',
-          activeImage: require('@/assets/typeface/openeye.png'),
-          inactiveImage: require('@/assets/typeface/closedeye.png'),
+          activeImage: require('@/assets/typeface/fan/graveclick.png'),
+          inactiveImage: require('@/assets/typeface/fan/grave.png'),
           isPlaying: false
         },
         {
           sound: new Howl({ src: require('@/assets/typeface/sound/energy.wav'), onplay: () => this.soundStarted(4), onend: () => this.soundEnded(4) }),
           word: 'energetic',
-          activeImage: require('@/assets/typeface/openeye.png'),
-          inactiveImage: require('@/assets/typeface/closedeye.png'),
+          activeImage: require('@/assets/typeface/fan/energeticclick.png'),
+          inactiveImage: require('@/assets/typeface/fan/energetic.png'),
           isPlaying: false
         },
         {
           sound: new Howl({ src: require('@/assets/typeface/sound/portion.wav'), onplay: () => this.soundStarted(5), onend: () => this.soundEnded(5) }),
           word: 'portion',
-          activeImage: require('@/assets/typeface/openeye.png'),
-          inactiveImage: require('@/assets/typeface/closedeye.png'),
+          activeImage: require('@/assets/typeface/fan/portionclick.png'),
+          inactiveImage: require('@/assets/typeface/fan/portion.png'),
           isPlaying: false
         }
       ]
@@ -89,6 +99,7 @@ export default {
     if (ctx) {
       this.context = new AudioContext
     } else {
+      // eslint-disable-next-line
       console.log("Sorry, but the Web Audio API is not supported by your browser. Please, consider upgrading to the latest version or downloading Google Chrome or Mozilla Firefox")
     }
   }
@@ -100,19 +111,50 @@ export default {
   width: 100%;
 }
 
-.audioFlexContainer {
+.outerFlex {
   display: flex;
 }
 
-.fan {
+.audioContainer {
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+}
+
+.gridContainer {
+  border: 1px solid #fcdd00;
+  border-bottom: none;
   height: 200px;
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  pointer-events: none;
+}
+
+.gridRow {
+  border-bottom: 1px solid #fcdd00;
+  height: 25%;
+  box-sizing: border-box;
+}
+
+.label {
+  text-transform: none;
+  position: absolute;
+  margin: 8px -60px;
+}
+
+#low {
+  bottom: 104px;
+}
+
+.fan {
+  height: 300px;
   text-align: center;
-  flex-grow: 1;
+  /* border: 1px solid black; */
 }
 
 .fanImage {
-  width: 100px;
-  height: 100px;
+  height: 200px;
 }
 
 .audioButton {
@@ -136,7 +178,7 @@ export default {
 
 .audioButtonActive {
   background: #DFB8AA;
-  color: #F17236;
+  color: #F17236;fcdd00
   transform: scale(1.15);
 }
 
