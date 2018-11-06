@@ -8,9 +8,6 @@
         <p>{{item.text}}</p>
       </div>
     </div>
-    <!-- <router-link to="/interactive">
-      <img class="startButton" :src="require('@/assets/nav/start.png')" alt="Start!">
-    </router-link> -->
     <img class="startButton" :src="require('@/assets/nav/start.png')" alt="Start!" @click="navigate('/interactive')">
   </div>
 </template>
