@@ -1,15 +1,27 @@
 <template>
   <div class="mobileHome">
-    <h1 style="text-align: center;">PLEASE WATCH YOUR TONE</h1>
-    <p>Historical and current representations of East Asian identities, particularly Chinese identities, living in Western societies have not always been fairly and ethically portrayed. Some depictions of Chinese identities have ranged from being tokenistic at best and outright racist at worst. In the area of visual communication design, this manifests itself in Asian mimicry typefaces. These can be found in the ‘foreign look’ category of font aggregator websites. Mimicry typefaces only offer an aesthetic imitation of written East Asian script which provides a one dimensional sense of language and culture.</p>
-    <p>As a first-generation Chinese-Australian, I wanted to critique this by designing Jyut Sans as a lingual exploration aiming to convey the richness of the spoken Cantonese language. On one hand, decorative elements of the typeface communicate the characteristics of spoken Cantonese, on the other, the typeface works as a diagrammatic system that graphically depicts its tonal intricacies.</p>
-    <h1>please use a larger device!</h1>
+    <img class="mobileBadge" :src="require('@/assets/mobile/PWYT badge.png')" alt="Please Watch Your Tone">
+    <p><span class="italic">Please Watch Your Tone</span> is a design research project which critiques the phenomenon of Asian mimicry typefaces. It questions the role that visual communicators play in outputting responsible and ethical visual culture into the world. The body of work encompasses a typeface, <span class="italic">Jyut Sans</span>, a website and a publication. <span class="italic">Jyut Sans</span> is the vehicle through which this project graphically conveys the tonal richness of Cantonese. Its structural components reflect the idiosyncrasies of the language. It has also has been designed to function as a diagrammatic system which visualises the tonal movements in Cantonese speech.</p>
+    <img class="mobileBadge" :src="require('@/assets/mobile/error.png')" alt="Error">
+    <h3 style="text-transform: none;">Sorry! Your device is too small, please switch to a larger screen to enjoy the full experience.</h3>
+    <img class="mobileBadge" :src="require('@/assets/mobile/error.png')" alt="Error">
   </div>
 </template>
 
 <style>
 .mobileHome {
-  height: 100%;
-  border: 1px solid red;
+  padding: 30px;
+  text-align: center;
+  color: #440f23;
+}
+
+.mobileBadge {
+  height: 150px;
+  width: 150px;
+  margin: 30px 0;
+}
+
+.italic {
+  font-style: italic;
 }
 </style>

@@ -282,7 +282,16 @@ button {
 }
 
 .mobile {
-
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 30px;
+  overflow-y: scroll;
+  border: 3px solid #440f23;
+  box-shadow: 0 0 0 13px #dfb8aa, 0 0 0 19px #440f23;
+  background: #dfb8aa;
 }
 
 .outerContainer {
@@ -365,6 +374,10 @@ button {
 @media screen and (max-width: 769.98px) {
   .desktop {
     display: none;
+  }
+
+  #app {
+    background-color: #dfb8aa !important;
   }
 }
 
