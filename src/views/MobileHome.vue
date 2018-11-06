@@ -5,6 +5,8 @@
     <img class="mobileBadge" :src="require('@/assets/mobile/error.png')" alt="Error">
     <h3 style="text-transform: none;">Sorry! Your device is too small, please switch to a larger screen to enjoy the full experience.</h3>
     <img class="mobileBadge" :src="require('@/assets/mobile/error.png')" alt="Error">
+    <p class="mobileCredits">Design by <a href="https://wilson-leung.com/" target="_blank">Wilson Leung</a></p>
+    <p class="mobileCredits">Site by <a href="#" target="_blank">Tim Busuttil</a></p>
   </div>
 </template>
 
@@ -19,6 +21,10 @@
   height: 150px;
   width: 150px;
   margin: 30px 0;
+}
+
+.mobileCredits {
+  margin: 5px;
 }
 
 .italic {
