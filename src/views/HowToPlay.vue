@@ -1,11 +1,11 @@
 <template>
   <div class="howToPlay">
-    <h2>How to play</h2>
+    <h2 style="color: #405766; margin-bottom: 30px;">How to play</h2>
     <div class="howFlexContainer">
       <div v-for="(item, index) in flexItems" class="flexItem" :key="index">
         <!-- <img class="featureImage" :src="item.image" :alt="item.alt"> -->
-        <h1>{{index+1}}</h1>
-        <p>{{item.text}}</p>
+        <h1 style="color: #405766; margin-top: 0;">{{index+1}}</h1>
+        <p style="color: #2d3c28;">{{item.text}}</p>
       </div>
     </div>
     <img class="startButton" :src="require('@/assets/nav/start.png')" alt="Start!" @click="navigate('/interactive')">
@@ -57,7 +57,7 @@ export default {
 .howFlexContainer {
   display: flex;
   width: 100%;
-  /* height: 200px; */
+  margin-bottom: 40px;
 }
 
 .flexItem {
