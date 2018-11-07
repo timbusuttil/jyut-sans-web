@@ -169,12 +169,12 @@ export default {
 .gridContainer {
   border: 1px solid #405766;
   border-bottom: none;
-  height: 200px;
+  height: 199px;
   width: 100%;
   box-sizing: border-box;
   position: absolute;
   pointer-events: none;
-  margin: 3px 0 5px 0;
+  margin: 4px 0 7px 0;
 }
 
 .gridRow {
