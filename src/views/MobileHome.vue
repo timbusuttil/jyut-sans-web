@@ -25,9 +25,19 @@
 
 .mobileCredits {
   margin: 5px;
+  color: #440f23;
 }
 
 .italic {
   font-style: italic;
+}
+
+a {
+  color: #f17236;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 2px solid #f17236;
 }
 </style>

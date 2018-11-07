@@ -5,7 +5,7 @@
       <p>Historic and current representations of East Asian identities, particularly Chinese identities, have not always been ethically portrayed in the media of Western societies. Some depictions of Chinese identities have ranged from being tokenistic at best and outright racist at worst. This project, Please Watch Your Tone questions the ethicality of Asian mimicry typefaces. They exist to imitate the aesthetic qualities of East Asian script without any nuance of language or culture.</p>
       <p>To critique this aspect of the visual communication design world, the project presents an alternative typeface, Jyut Sans, which diagrammatically portrays Cantonese tonal complexities. On one hand, decorative elements of the typeface communicate the characteristics of spoken Cantonese. On the other hand, the typeface works as a diagrammatic system that graphically depicts its tonal intricacies.</p>
     </div>
-    <p class="credits">Design by <a href="https://wilson-leung.com/" target="_blank">Wilson Leung</a>&emsp;|&emsp;Site by Tim Busuttil</p>
+    <p class="credits">Design by <a href="https://wilson-leung.com/" target="_blank">Wilson Leung</a>&emsp;|&emsp;Site by <a href="http://timbusuttil.xyz" target="_blank">Tim Busuttil</a></p>
   </div>
 </template>
 
@@ -21,9 +21,21 @@
 
 .homeCopyContainer {
   max-width: 700px;
+  color: #440f23;
 }
 
 .credits {
+  color: #440f23;
   margin-top: 50px;
 }
+
+a {
+  color: #f17236;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 2px solid #f17236;
+}
+
 </style>
