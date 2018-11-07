@@ -182,12 +182,12 @@ export default {
         },
         {
           char: 'u',
-          src: 'u stable.png',
+          src: 'u fall.png',
           class: 'character falling'
         },
         {
           char: 'u',
-          src: 'u fall.png',
+          src: 'u stable.png',
           class: 'character stable'
         },
         {
