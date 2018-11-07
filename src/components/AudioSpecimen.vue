@@ -13,11 +13,15 @@
         <h3 class="label" id="low">Low</h3>
         <div v-for="(sound, index) in audioSamples" :key="index" class="fan">
           <img class="fanImage" :src="sound.isPlaying ? sound.activeImage : sound.inactiveImage" :style="index === 0 ? 'margin-right: -40px' : ''">
-          <button :class="sound.isPlaying ? 'audioButton audioButtonActive' : 'audioButton audioButtonInactive'" type="button" name="button" @click="playSound(index)">{{index+1}}</button>
-          <transition name="fade">
-            <p v-show="sound.isPlaying">{{ sound.word }}</p>
-          </transition>
         </div>
+      </div>
+    </div>
+    <div class="buttonContainer">
+      <div v-for="(sound, index) in audioSamples" :key="index + 'a'" class="fanButton">
+        <button :class="sound.isPlaying ? 'audioButton audioButtonActive' : 'audioButton audioButtonInactive'" type="button" name="button" @click="playSound(index)">{{index+1}}</button>
+        <transition name="fade">
+          <p v-show="sound.isPlaying">{{ sound.word }}</p>
+        </transition>
       </div>
     </div>
   </div>
@@ -148,13 +152,25 @@ export default {
 }
 
 .fan {
-  height: 300px;
   text-align: center;
-  /* border: 1px solid black; */
+  z-index: 10;
 }
 
 .fanImage {
   height: 200px;
+}
+
+.buttonContainer {
+  width: 820px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fanButton {
+  width: 100px;
+  text-align: center;
 }
 
 .audioButton {
@@ -165,6 +181,7 @@ export default {
   border: 3px solid #DFB8AA;
   border-radius: 20px;
   transition: transform 0.2s;
+  font-family: 'kabel-black';
 }
 
 .audioButton:focus {
