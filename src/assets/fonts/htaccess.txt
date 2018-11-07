@@ -1,4 +1,4 @@
-SetEnvIf Referer yourdomain\.com localreferer
+SetEnvIf Referer pleasewatchyourtone\.xyz localreferer
 
 <FilesMatch \.(eot|woff|woff2|ttf)$>
 Order deny,allow
