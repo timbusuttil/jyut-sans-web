@@ -14,7 +14,7 @@
     <button class="interactiveButton" type="button" name="button" @click="resetIndices">start again</button>
     <button class="interactiveButton" type="button" name="button" @click="toggleGrid" style="float: right;">{{ showGrid ? 'grid off' : 'grid on' }}</button>
     <h2 class="unselectable">
-      <span v-for="(object, index) in objects" :key="index" class="word" :style="object.isHovered ? 'border-bottom: 2px solid black;' : 'border: none'" v-html="getCurrentStringHtml(index)"></span>
+      <span v-for="(object, index) in objects" :key="index" class="word" :style="object.isHovered ? 'border-bottom: 2px solid #2d3c28;' : 'border: none'" v-html="getCurrentStringHtml(index)" @click="playSound(index)" @mouseover="setHover(index, true)" @mouseleave="setHover(index, false)"></span>
     </h2>
   </div>
 </template>
@@ -47,7 +47,7 @@ export default {
           words: ['go up the', 'hurt the', 'want the', 'goes up the', 'hurts the', 'wants the'],
           sounds: [
             new Howl({ src: require('@/assets/play/sound/go up.wav') }),
-            new Howl({ src: require('@/assets/play/sound/hurty.wav') }),
+            new Howl({ src: require('@/assets/play/sound/hurt.wav') }),
             new Howl({ src: require('@/assets/play/sound/want.wav') })
           ],
           currentIndex: 0,
@@ -83,6 +83,9 @@ export default {
   methods: {
     incrementWord (i) {
       this.objects[i].currentIndex < 2 ? this.objects[i].currentIndex ++ : this.objects[i].currentIndex = 0
+      this.setHover(i, true)
+    },
+    playSound (i) {
       this.resumeAudioContext()
       this.objects[i].sounds[this.objects[i].currentIndex].play()
     },
@@ -104,13 +107,13 @@ export default {
     },
     getCurrentStringHtml (i) {
       if (i === 1 && this.objects[0].currentIndex !== 0) {
-        return `&thinsp;${this.objects[i].words[this.objects[i].currentIndex+3]}&thinsp;`
+        return `<wbr>&thinsp;${this.objects[i].words[this.objects[i].currentIndex+3]}&thinsp;`
       } else if (this.objects[2].currentIndex === 2 && this.objects[3].currentIndex === 0 && i === 2) {
-        return `&thinsp;stairs&thinsp;`
+        return `<wbr>&thinsp;stairs&thinsp;`
       } else if (this.objects[2].currentIndex === 2 && this.objects[3].currentIndex === 0 && i === 3) {
         return ''
       } else {
-        return `&thinsp;${this.objects[i].words[this.objects[i].currentIndex]}&thinsp;`
+        return `<wbr>&thinsp;${this.objects[i].words[this.objects[i].currentIndex]}&thinsp;`
       }
     },
     getCurrentImage (i) {
@@ -121,7 +124,16 @@ export default {
       }
     },
     setHover (i, val) {
-      this.objects[i].isHovered = val
+      if ((i === 2 || i == 3) && this.objects[2].currentIndex === 2 && this.objects[3].currentIndex === 0) {
+        this.objects[2].isHovered = val
+        this.objects[3].isHovered = val
+      } else {
+        this.objects[0].isHovered = false
+        this.objects[1].isHovered = false
+        this.objects[2].isHovered = false
+        this.objects[3].isHovered = false
+        this.objects[i].isHovered = val
+      }
     },
     toggleGrid () {
       this.showGrid = !this.showGrid
@@ -159,11 +171,16 @@ export default {
 
 .imageContainer {
   margin: 0 auto;
+  z-index: 10;
 }
 
 .image {
   height: 210px;
   object-fit: contain;
+}
+
+.image:hover {
+  cursor: pointer;
 }
 
 .gridContainer {
@@ -192,8 +209,13 @@ export default {
   margin: 0;
 }
 
+.word {
+  color: #2d3c28;
+  white-space: nowrap;
+}
+
 .word:hover {
-  border-bottom: 2px solid black !important;
+  cursor: pointer;
 }
 
 .interactiveButton {
@@ -208,6 +230,7 @@ export default {
 .interactiveButton:hover {
   background: #405766;
   color: #b5d9a9;
+  cursor: pointer;
 }
 
 .interactiveButton:focus {
