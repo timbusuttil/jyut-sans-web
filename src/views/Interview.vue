@@ -38,8 +38,15 @@ export default {
 }
 
 .loading {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   margin: auto;
+  animation: 2.5s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg)
+  }
 }
 </style>
