@@ -3,7 +3,6 @@
     <h2 style="color: #405766; margin-bottom: 30px;">How to play</h2>
     <div class="howFlexContainer">
       <div v-for="(item, index) in flexItems" class="flexItem" :key="index">
-        <!-- <img class="featureImage" :src="item.image" :alt="item.alt"> -->
         <h1 style="color: #405766; margin-top: 0;">{{index+1}}</h1>
         <p style="color: #2d3c28;">{{item.text}}</p>
       </div>
@@ -19,19 +18,13 @@ export default {
     return {
       flexItems: [
         {
-          // image: require('../assets/typeface/letters/a falling.png'),
-          // alt: '',
-          text: 'Interact with words by clicking on them'
+          text: 'Click on the Cantonese words to change their meaning'
         },
         {
-          // image: require('../assets/typeface/letters/a rising.png'),
-          // alt: '',
-          text: 'Click on the tone levels to see how tone changes meaning'
+          text: 'Hear the Cantonese words by clicking on the underlined English counterparts'
         },
         {
-          // image: require('../assets/typeface/letters/a stable.png'),
-          // alt: '',
-          text: 'Turn the grid on and off at any time'
+          text: 'Find a word combination that makes the most ridiculous sentence!'
         }
       ]
     }
