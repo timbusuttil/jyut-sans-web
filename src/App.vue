@@ -39,20 +39,20 @@ export default {
       borderColours: ['#440f23', '#fcdd00', '#2d3c28', '#2d3c28', '#f17236'],
       cursors: [
         {
+          default: 'projectcursor@150x',
+          pointer: 'projectcursorclick@150x'
+        },
+        {
           default: 'cursor 50',
           pointer: 'interactive cursor 50'
         },
         {
-          default: 'cursor 50 u',
-          pointer: 'interactive cursor 50 u'
-        },
-        {
-          default: 'cursor 50 u',
+          default: 'cursor 50',
           pointer: 'interactive cursor 50'
         },
         {
           default: 'cursor 50',
-          pointer: 'interactive cursor 50 u'
+          pointer: 'interactive cursor 50'
         },
         {
           default: 'cursor 50',
@@ -220,10 +220,8 @@ export default {
     cursor () {
       // return "url('./static/cursors/" + (this.navIsHovered ? this.cursors[this.currentRouteIndex].pointer : this.cursors[this.currentRouteIndex].default) + ".png'), default"
       if (this.navIsHovered) {
-        console.log(this.cursors[this.currentRouteIndex].pointer);
         return "url('./static/cursors/" + this.cursors[this.currentRouteIndex].pointer + ".png') 25 0, default"
       } else {
-        console.log(this.cursors[this.currentRouteIndex].default);
         return "url('./static/cursors/" + this.cursors[this.currentRouteIndex].default + ".png') 12 0, default"
       }
     }
