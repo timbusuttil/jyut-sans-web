@@ -1,29 +1,22 @@
 <template>
-  <div id="app" :style="{background: this.backgroundColour}">
+  <div id="app" :style="{background: this.backgroundColour, cursor: this.cursor}">
     <div class="desktop">
       <div class="outerContainer">
         <div class="innerContainer" :style="{borderColor: this.borderColour, boxShadow: this.boxShadow}">
           <router-link to="/">
-            <img class="nav rectangle" id="tl" :src="navImages.project.isHovered ? navImages.project.images[currentRouteIndex].hovered : navImages.project.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.project, true)" @mouseleave="navHover(navImages.project, false)">
+            <img class="nav rectangle" id="tl" :src="navImages.project.isHovered ? navImages.project.images[currentRouteIndex].hovered : navImages.project.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.project, true)" @mouseleave="navHover(navImages.project, false)" :style="{cursor: this.cursor}">
           </router-link>
           <router-link to="/typeface">
-            <img class="nav circle" id="tr" :src="navImages.typeface.isHovered ? navImages.typeface.images[currentRouteIndex].hovered : navImages.typeface.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.typeface, true)" @mouseleave="navHover(navImages.typeface, false)">
+            <img class="nav circle" id="tr" :src="navImages.typeface.isHovered ? navImages.typeface.images[currentRouteIndex].hovered : navImages.typeface.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.typeface, true)" @mouseleave="navHover(navImages.typeface, false)" :style="{cursor: this.cursor}">
           </router-link>
           <router-link to="/how-to-play">
-            <img class="nav rounded" id="br" :src="navImages.play.isHovered ? navImages.play.images[currentRouteIndex].hovered : navImages.play.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.play, true)" @mouseleave="navHover(navImages.play, false)">
+            <img class="nav rounded" id="br" :src="navImages.play.isHovered ? navImages.play.images[currentRouteIndex].hovered : navImages.play.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.play, true)" @mouseleave="navHover(navImages.play, false)" :style="{cursor: this.cursor}">
           </router-link>
           <router-link to="/interview">
-            <img class="nav circle" id="bl" :src="navImages.video.isHovered ? navImages.video.images[currentRouteIndex].hovered : navImages.video.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.video, true)" @mouseleave="navHover(navImages.video, false)">
+            <img class="nav circle" id="bl" :src="navImages.video.isHovered ? navImages.video.images[currentRouteIndex].hovered : navImages.video.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.video, true)" @mouseleave="navHover(navImages.video, false)" :style="{cursor: this.cursor}">
           </router-link>
-          <!-- <keep-alive> -->
           <router-view/>
-          <!-- </keep-alive> -->
         </div>
-        <!-- <div style="margin-top: 20px; text-align: center;"> -->
-          <!-- <router-link to="/about" style="margin-top: 20px;">About</router-link> -->
-          <!-- <p>{{this.$route.path}}</p>
-          <p>{{this.currentRouteIndex}}</p> -->
-        <!-- </div> -->
       </div>
     </div>
     <div class="mobile">
@@ -44,6 +37,29 @@ export default {
     return {
       backgroundColours: ['#dfb8aa', '#f17236', '#b5d9a9', '#b5d9a9', '#fcc700'],
       borderColours: ['#440f23', '#fcdd00', '#2d3c28', '#2d3c28', '#f17236'],
+      cursors: [
+        {
+          default: 'cursor 50',
+          pointer: 'interactive cursor 50'
+        },
+        {
+          default: 'cursor 50 u',
+          pointer: 'interactive cursor 50 u'
+        },
+        {
+          default: 'cursor 50 u',
+          pointer: 'interactive cursor 50'
+        },
+        {
+          default: 'cursor 50',
+          pointer: 'interactive cursor 50 u'
+        },
+        {
+          default: 'cursor 50',
+          pointer: 'interactive cursor 50'
+        }
+      ],
+      navIsHovered: false,
       navImages: {
         project: {
           isHovered: false,
@@ -200,11 +216,22 @@ export default {
     },
     boxShadow () {
       return '0 0 0 13px ' + this.backgroundColour + ', 0 0 0 19px ' + this.borderColour
+    },
+    cursor () {
+      // return "url('./static/cursors/" + (this.navIsHovered ? this.cursors[this.currentRouteIndex].pointer : this.cursors[this.currentRouteIndex].default) + ".png'), default"
+      if (this.navIsHovered) {
+        console.log(this.cursors[this.currentRouteIndex].pointer);
+        return "url('./static/cursors/" + this.cursors[this.currentRouteIndex].pointer + ".png') 25 0, default"
+      } else {
+        console.log(this.cursors[this.currentRouteIndex].default);
+        return "url('./static/cursors/" + this.cursors[this.currentRouteIndex].default + ".png') 12 0, default"
+      }
     }
   },
   methods: {
     navHover (navObject, val) {
       navObject.isHovered = val
+      this.navIsHovered = val
     }
   }
 }
@@ -221,6 +248,8 @@ export default {
   padding: 75px 125px;
   box-sizing: border-box;
   display: flex;
+
+  cursor: url(./assets/cursors/cursor 50.png), pointer;
 }
 
 /* begin typography */

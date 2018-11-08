@@ -190,7 +190,7 @@ export default {
 
 .audioButton:hover {
   transform: scale(1.15);
-  cursor: pointer;
+  cursor: url(../assets/cursors/interactive cursor 50 u.png), pointer;
 }
 
 .audioButtonActive {
