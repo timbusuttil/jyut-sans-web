@@ -1,6 +1,6 @@
 <template>
   <div class="interactiveSpecimen">
-    <div class="specimenContainer">
+    <div class="interactiveSpecimenContainer">
       <div class="gridContainer" v-show="showGrid">
         <div class="gridRow"></div>
         <div class="gridRow"></div>
@@ -163,7 +163,7 @@ export default {
   width: 100%;
 }
 
-.specimenContainer {
+.interactiveSpecimenContainer {
   /* width: 100%; */
   display: flex;
   margin: 0 auto;
