@@ -28,6 +28,7 @@ export default {
     return {
       showGrid: true,
       context: '',
+      stairsAudio: new Howl({ src: require('@/assets/play/sound/stairs.wav') }),
       objects: [
         {
           images: ['i.png', 'moth.png', 'starve.png'],
@@ -87,7 +88,11 @@ export default {
     },
     playSound (i) {
       this.resumeAudioContext()
-      this.objects[i].sounds[this.objects[i].currentIndex].play()
+      if (i === 2 && this.objects[2].currentIndex === 2 && this.objects[3].currentIndex === 0) {
+        this.stairsAudio.play()
+      } else {
+        this.objects[i].sounds[this.objects[i].currentIndex].play()
+      }
     },
     resumeAudioContext () {
       if (this.context.state === 'suspended') {
