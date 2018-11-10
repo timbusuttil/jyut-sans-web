@@ -3,11 +3,11 @@
     <h3>click on the numbers to hear the tones</h3>
     <div class="outerFlex">
       <div class="audioContainer">
-        <div class="gridContainer">
-          <div class="gridRow"></div>
-          <div class="gridRow"></div>
-          <div class="gridRow"></div>
-          <div class="gridRow"></div>
+        <div class="audioGridContainer">
+          <div class="audioGridRow"></div>
+          <div class="audioGridRow"></div>
+          <div class="audioGridRow"></div>
+          <div class="audioGridRow"></div>
         </div>
         <h3 class="label" id="high">High</h3>
         <h3 class="label" id="low">Low</h3>
@@ -125,7 +125,7 @@ export default {
   position: relative;
 }
 
-.gridContainer {
+.audioGridContainer {
   border: 1px solid #fcdd00;
   border-bottom: none;
   height: 200px;
@@ -135,7 +135,7 @@ export default {
   pointer-events: none;
 }
 
-.gridRow {
+.audioGridRow {
   border-bottom: 1px solid #fcdd00;
   height: 25%;
   box-sizing: border-box;
