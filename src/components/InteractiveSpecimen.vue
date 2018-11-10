@@ -187,6 +187,10 @@ export default {
 
 .image:hover {
   cursor: url(/static/cursors/playcursorclick.png) 8 0, pointer;
+  cursor: image-set(
+    url(/static/cursors/playcursorclick.png) 1x,
+    url(/static/cursors/playcursorclick@2x.png) 2x
+  ) 8 0, pointer;
 }
 
 .gridContainer {
@@ -222,6 +226,10 @@ export default {
 
 .word:hover {
   cursor: url(/static/cursors/playcursorclick.png) 8 0, pointer;
+  cursor: image-set(
+    url(/static/cursors/playcursorclick.png) 1x,
+    url(/static/cursors/playcursorclick@2x.png) 2x
+  ) 8 0, pointer;
 }
 
 .interactiveButton {
@@ -237,6 +245,10 @@ export default {
   background: #405766;
   color: #b5d9a9;
   cursor: url(/static/cursors/playcursorclick.png) 8 0, pointer;
+  cursor: image-set(
+    url(/static/cursors/playcursorclick.png) 1x,
+    url(/static/cursors/playcursorclick@2x.png) 2x
+  ) 8 0, pointer;
 }
 
 .interactiveButton:focus {

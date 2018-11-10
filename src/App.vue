@@ -1,19 +1,19 @@
 <template>
-  <div id="app" :style="{background: this.backgroundColour, cursor: this.cursor}">
+  <div id="app" :style="{background: this.backgroundColour}" :class="cursorClassObject">
     <div class="desktop">
       <div class="outerContainer">
         <div class="innerContainer" :style="{borderColor: this.borderColour, boxShadow: this.boxShadow}">
           <router-link to="/">
-            <img class="nav rectangle" id="tl" :src="navImages.project.isHovered ? navImages.project.images[currentRouteIndex].hovered : navImages.project.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.project, true)" @mouseleave="navHover(navImages.project, false)" :style="{cursor: this.cursor}">
+            <img class="nav rectangle" id="tl" :src="navImages.project.isHovered ? navImages.project.images[currentRouteIndex].hovered : navImages.project.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.project, true)" @mouseleave="navHover(navImages.project, false)" :class="cursorClickClassObject">
           </router-link>
           <router-link to="/typeface">
-            <img class="nav circle" id="tr" :src="navImages.typeface.isHovered ? navImages.typeface.images[currentRouteIndex].hovered : navImages.typeface.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.typeface, true)" @mouseleave="navHover(navImages.typeface, false)" :style="{cursor: this.cursor}">
+            <img class="nav circle" id="tr" :src="navImages.typeface.isHovered ? navImages.typeface.images[currentRouteIndex].hovered : navImages.typeface.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.typeface, true)" @mouseleave="navHover(navImages.typeface, false)" :class="cursorClickClassObject">
           </router-link>
           <router-link to="/how-to-play">
-            <img class="nav rounded" id="br" :src="navImages.play.isHovered ? navImages.play.images[currentRouteIndex].hovered : navImages.play.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.play, true)" @mouseleave="navHover(navImages.play, false)" :style="{cursor: this.cursor}">
+            <img class="nav rounded" id="br" :src="navImages.play.isHovered ? navImages.play.images[currentRouteIndex].hovered : navImages.play.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.play, true)" @mouseleave="navHover(navImages.play, false)" :class="cursorClickClassObject">
           </router-link>
           <router-link to="/interview">
-            <img class="nav circle" id="bl" :src="navImages.video.isHovered ? navImages.video.images[currentRouteIndex].hovered : navImages.video.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.video, true)" @mouseleave="navHover(navImages.video, false)" :style="{cursor: this.cursor}">
+            <img class="nav circle" id="bl" :src="navImages.video.isHovered ? navImages.video.images[currentRouteIndex].hovered : navImages.video.images[currentRouteIndex].unhovered" @mouseover="navHover(navImages.video, true)" @mouseleave="navHover(navImages.video, false)" :class="cursorClickClassObject">
           </router-link>
           <router-view/>
         </div>
@@ -218,11 +218,34 @@ export default {
       return '0 0 0 13px ' + this.backgroundColour + ', 0 0 0 19px ' + this.borderColour
     },
     cursor () {
-      // return "url('./static/cursors/" + (this.navIsHovered ? this.cursors[this.currentRouteIndex].pointer : this.cursors[this.currentRouteIndex].default) + ".png'), default"
-      if (this.navIsHovered) {
-        return "url('./static/cursors/" + this.cursors[this.currentRouteIndex].pointer + ".png') 8 0, default"
-      } else {
-        return "url('./static/cursors/" + this.cursors[this.currentRouteIndex].default + ".png') 4 0, default"
+      // no retina (does work)
+      // if (this.navIsHovered) {
+      //   return "url('./static/cursors/" + this.cursors[this.currentRouteIndex].pointer + ".png') 8 0, default"
+      // } else {
+      //   return "url('./static/cursors/" + this.cursors[this.currentRouteIndex].default + ".png') 4 0, default"
+      // }
+
+      // retina (doesn't work)
+      // if (this.navIsHovered) {
+      //   return "image-set(url(./static/cursors/" + this.cursors[this.currentRouteIndex].pointer + ".png) 1x, url(./static/cursors/" + this.cursors[this.currentRouteIndex].pointer + "@2x.png) 2x) 8 0, pointer;"
+      // } else {
+      //   return "image-set(url(./static/cursors/" + this.cursors[this.currentRouteIndex].default + ".png) 1x, url(./static/cursors/" + this.cursors[this.currentRouteIndex].default + "@2x.png) 2x) 4 0, default;"
+      // }
+    },
+    cursorClassObject () {
+      return {
+        projectCursor: this.currentRouteIndex === 0,
+        typefaceCursor: this.currentRouteIndex === 1,
+        playCursor: this.currentRouteIndex === 2 ||  this.currentRouteIndex === 3,
+        videoCursor: this.currentRouteIndex === 4
+      }
+    },
+    cursorClickClassObject () {
+      return {
+        projectClickCursor: this.currentRouteIndex === 0,
+        typefaceClickCursor: this.currentRouteIndex === 1,
+        playClickCursor: this.currentRouteIndex === 2 ||  this.currentRouteIndex === 3,
+        videoClickCursor: this.currentRouteIndex === 4
       }
     }
   },
@@ -299,6 +322,72 @@ button {
   text-transform: uppercase;
 }
 /*  end typography  */
+
+/*   cursors   */
+.projectCursor {
+  cursor: url(/static/cursors/projectcursor.png) 4 0, default;
+  cursor: image-set(
+    url(/static/cursors/projectcursor.png) 1x,
+    url(/static/cursors/projectcursor@2x.png) 2x
+  ) 4 0, default;
+}
+
+.typefaceCursor {
+  cursor: url(/static/cursors/typefacecursor.png) 4 0, default;
+  cursor: image-set(
+    url(/static/cursors/typefacecursor.png) 1x,
+    url(/static/cursors/typefacecursor@2x.png) 2x
+  ) 4 0, default;
+}
+
+.playCursor {
+  cursor: url(/static/cursors/playclickcursor.png) 4 0, default;
+  cursor: image-set(
+    url(/static/cursors/playclickcursor.png) 1x,
+    url(/static/cursors/playcursor@2x.png) 2x
+  ) 4 0, default;
+}
+
+.videoCursor {
+  cursor: url(/static/cursors/videoclickcursor.png) 4 0, default;
+  cursor: image-set(
+    url(/static/cursors/videoclickcursor.png) 1x,
+    url(/static/cursors/videocursor@2x.png) 2x
+  ) 4 0, default;
+}
+
+.projectClickCursor {
+  cursor: url(/static/cursors/projectcursorclick.png) 8 0, pointer;
+  cursor: image-set(
+    url(/static/cursors/projectcursorclick.png) 1x,
+    url(/static/cursors/projectcursorclick@2x.png) 2x
+  ) 8 0, pointer;
+}
+
+.typefaceClickCursor {
+  cursor: url(/static/cursors/typefacecursorclick.png) 8 0, pointer;
+  cursor: image-set(
+    url(/static/cursors/typefacecursorclick.png) 1x,
+    url(/static/cursors/typefacecursorclick@2x.png) 2x
+  ) 8 0, pointer;
+}
+
+.playClickCursor {
+  cursor: url(/static/cursors/playcursorclick.png) 8 0, pointer;
+  cursor: image-set(
+    url(/static/cursors/playcursorclick.png) 1x,
+    url(/static/cursors/playcursorclick@2x.png) 2x
+  ) 8 0, pointer;
+}
+
+.videoClickCursor {
+  cursor: url(/static/cursors/videocursorclick.png) 8 0, pointer;
+  cursor: image-set(
+    url(/static/cursors/videocursorclick.png) 1x,
+    url(/static/cursors/videocursorclick@2x.png) 2x
+  ) 8 0, pointer;
+}
+/* end cursors */
 
 .desktop {
   width: 100%;

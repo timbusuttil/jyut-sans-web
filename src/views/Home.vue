@@ -36,6 +36,10 @@ a {
 a:hover {
   border-bottom: 2px solid #f17236;
   cursor: url(/static/cursors/projectcursorclick.png) 8 0, pointer;
+  cursor: image-set(
+    url(/static/cursors/projectcursorclick.png) 1x,
+    url(/static/cursors/projectcursorclick@2x.png) 2x
+  ) 8 0, pointer;
 }
 
 .italics {
