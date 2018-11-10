@@ -11,7 +11,6 @@
 
 <style>
 .home {
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +19,7 @@
 }
 
 .homeCopyContainer {
-  max-width: 700px;
+  max-width: 900px;
   color: #440f23;
 }
 
@@ -41,5 +40,11 @@ a:hover {
 
 .italics {
   font-style: italic;
+}
+
+@media screen and (min-width: 1219.98px) {
+  .home {
+    height: 100%;
+  }
 }
 </style>
