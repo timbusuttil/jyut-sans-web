@@ -39,24 +39,24 @@ export default {
       borderColours: ['#440f23', '#fcdd00', '#2d3c28', '#2d3c28', '#f17236'],
       cursors: [
         {
-          default: 'projectcursor@150x',
-          pointer: 'projectcursorclick@150x'
+          default: 'projectcursor',
+          pointer: 'projectcursorclick'
         },
         {
-          default: 'cursor 50',
-          pointer: 'interactive cursor 50'
+          default: 'typefacecursor',
+          pointer: 'typefacecursorclick'
         },
         {
-          default: 'cursor 50',
-          pointer: 'interactive cursor 50'
+          default: 'playcursor',
+          pointer: 'playcursorclick'
         },
         {
-          default: 'cursor 50',
-          pointer: 'interactive cursor 50'
+          default: 'playcursor',
+          pointer: 'playcursorclick'
         },
         {
-          default: 'cursor 50',
-          pointer: 'interactive cursor 50'
+          default: 'videocursor',
+          pointer: 'videocursorclick'
         }
       ],
       navIsHovered: false,
@@ -220,9 +220,9 @@ export default {
     cursor () {
       // return "url('./static/cursors/" + (this.navIsHovered ? this.cursors[this.currentRouteIndex].pointer : this.cursors[this.currentRouteIndex].default) + ".png'), default"
       if (this.navIsHovered) {
-        return "url('./static/cursors/" + this.cursors[this.currentRouteIndex].pointer + ".png') 25 0, default"
+        return "url('./static/cursors/" + this.cursors[this.currentRouteIndex].pointer + ".png') 8 0, default"
       } else {
-        return "url('./static/cursors/" + this.cursors[this.currentRouteIndex].default + ".png') 12 0, default"
+        return "url('./static/cursors/" + this.cursors[this.currentRouteIndex].default + ".png') 4 0, default"
       }
     }
   },
@@ -246,8 +246,6 @@ export default {
   padding: 75px 125px;
   box-sizing: border-box;
   display: flex;
-
-  cursor: url(./assets/cursors/cursor 50.png), pointer;
 }
 
 /* begin typography */

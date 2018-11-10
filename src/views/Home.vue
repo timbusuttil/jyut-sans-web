@@ -36,6 +36,7 @@ a {
 
 a:hover {
   border-bottom: 2px solid #f17236;
+  cursor: url(/static/cursors/projectcursorclick.png) 8 0, pointer;
 }
 
 </style>

@@ -33,6 +33,10 @@ export default {
   display: flex;
 }
 
+.player {
+  cursor: help;
+}
+
 .video {
   border: none;
 }

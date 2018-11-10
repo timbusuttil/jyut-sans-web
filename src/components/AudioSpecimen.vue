@@ -148,7 +148,7 @@ export default {
 }
 
 #low {
-  bottom: 104px;
+  bottom: 10px;
 }
 
 .fan {
@@ -190,7 +190,7 @@ export default {
 
 .audioButton:hover {
   transform: scale(1.15);
-  cursor: url(../assets/cursors/interactive cursor 50 u.png), pointer;
+  cursor: url(/static/cursors/typefacecursorclick.png) 8 0, pointer;
 }
 
 .audioButtonActive {

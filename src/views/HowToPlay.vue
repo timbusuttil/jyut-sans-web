@@ -75,6 +75,6 @@ export default {
 
 .startButton:hover {
   transform: translateX(10px);
-  cursor: pointer;
+  cursor: url(/static/cursors/playcursorclick.png) 8 0, pointer;
 }
 </style>

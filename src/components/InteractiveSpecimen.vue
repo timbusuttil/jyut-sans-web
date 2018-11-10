@@ -62,7 +62,7 @@ export default {
             new Howl({ src: require('@/assets/play/sound/twist.wav') }),
             new Howl({ src: require('@/assets/play/sound/building.wav') })
           ],
-          currentIndex: 0,
+          currentIndex: 2,
           isHovered: false
         },
         {
@@ -139,9 +139,10 @@ export default {
       this.showGrid = !this.showGrid
     },
     resetIndices () {
-      this.objects.forEach((object) => {
-        object.currentIndex = 0
-      })
+      this.objects[0].currentIndex = 0
+      this.objects[1].currentIndex = 0
+      this.objects[2].currentIndex = 2
+      this.objects[3].currentIndex = 0
     }
   },
   created () {
@@ -180,7 +181,7 @@ export default {
 }
 
 .image:hover {
-  cursor: pointer;
+  cursor: url(/static/cursors/playcursorclick.png) 8 0, pointer;
 }
 
 .gridContainer {
@@ -215,7 +216,7 @@ export default {
 }
 
 .word:hover {
-  cursor: pointer;
+  cursor: url(/static/cursors/playcursorclick.png) 8 0, pointer;
 }
 
 .interactiveButton {
@@ -230,7 +231,7 @@ export default {
 .interactiveButton:hover {
   background: #405766;
   color: #b5d9a9;
-  cursor: pointer;
+  cursor: url(/static/cursors/playcursorclick.png) 8 0, pointer;
 }
 
 .interactiveButton:focus {
