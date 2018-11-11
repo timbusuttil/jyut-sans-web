@@ -193,7 +193,7 @@ export default {
   cursor: url(/static/cursors/typefacecursorclick.png) 8 0, pointer;
   cursor: image-set(
     url(/static/cursors/typefacecursorclick.png) 1x,
-    url(/static/cursors/typefacecursorclick@2x.png) 2x
+    url(/static/cursors/typefacecursorclick@1.5x.png) 2x
   ) 8 0, pointer;
 }
 

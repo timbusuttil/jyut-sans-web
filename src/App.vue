@@ -227,9 +227,9 @@ export default {
 
       // retina (doesn't work)
       // if (this.navIsHovered) {
-      //   return "image-set(url(./static/cursors/" + this.cursors[this.currentRouteIndex].pointer + ".png) 1x, url(./static/cursors/" + this.cursors[this.currentRouteIndex].pointer + "@2x.png) 2x) 8 0, pointer;"
+      //   return "image-set(url(./static/cursors/" + this.cursors[this.currentRouteIndex].pointer + ".png) 1x, url(./static/cursors/" + this.cursors[this.currentRouteIndex].pointer + "@1.5x.png) 2x) 8 0, pointer;"
       // } else {
-      //   return "image-set(url(./static/cursors/" + this.cursors[this.currentRouteIndex].default + ".png) 1x, url(./static/cursors/" + this.cursors[this.currentRouteIndex].default + "@2x.png) 2x) 4 0, default;"
+      //   return "image-set(url(./static/cursors/" + this.cursors[this.currentRouteIndex].default + ".png) 1x, url(./static/cursors/" + this.cursors[this.currentRouteIndex].default + "@1.5x.png) 2x) 4 0, default;"
       // }
     },
     cursorClassObject () {
@@ -328,7 +328,7 @@ button {
   cursor: url(/static/cursors/projectcursor.png) 4 0, default;
   cursor: image-set(
     url(/static/cursors/projectcursor.png) 1x,
-    url(/static/cursors/projectcursor@2x.png) 2x
+    url(/static/cursors/projectcursor@1.5x.png) 2x
   ) 4 0, default;
 }
 
@@ -336,7 +336,7 @@ button {
   cursor: url(/static/cursors/typefacecursor.png) 4 0, default;
   cursor: image-set(
     url(/static/cursors/typefacecursor.png) 1x,
-    url(/static/cursors/typefacecursor@2x.png) 2x
+    url(/static/cursors/typefacecursor@1.5x.png) 2x
   ) 4 0, default;
 }
 
@@ -344,7 +344,7 @@ button {
   cursor: url(/static/cursors/playclickcursor.png) 4 0, default;
   cursor: image-set(
     url(/static/cursors/playclickcursor.png) 1x,
-    url(/static/cursors/playcursor@2x.png) 2x
+    url(/static/cursors/playcursor@1.5x.png) 2x
   ) 4 0, default;
 }
 
@@ -352,7 +352,7 @@ button {
   cursor: url(/static/cursors/videoclickcursor.png) 4 0, default;
   cursor: image-set(
     url(/static/cursors/videoclickcursor.png) 1x,
-    url(/static/cursors/videocursor@2x.png) 2x
+    url(/static/cursors/videocursor@1.5x.png) 2x
   ) 4 0, default;
 }
 
@@ -360,7 +360,7 @@ button {
   cursor: url(/static/cursors/projectcursorclick.png) 8 0, pointer;
   cursor: image-set(
     url(/static/cursors/projectcursorclick.png) 1x,
-    url(/static/cursors/projectcursorclick@2x.png) 2x
+    url(/static/cursors/projectcursorclick@1.5x.png) 2x
   ) 8 0, pointer;
 }
 
@@ -368,7 +368,7 @@ button {
   cursor: url(/static/cursors/typefacecursorclick.png) 8 0, pointer;
   cursor: image-set(
     url(/static/cursors/typefacecursorclick.png) 1x,
-    url(/static/cursors/typefacecursorclick@2x.png) 2x
+    url(/static/cursors/typefacecursorclick@1.5x.png) 2x
   ) 8 0, pointer;
 }
 
@@ -376,7 +376,7 @@ button {
   cursor: url(/static/cursors/playcursorclick.png) 8 0, pointer;
   cursor: image-set(
     url(/static/cursors/playcursorclick.png) 1x,
-    url(/static/cursors/playcursorclick@2x.png) 2x
+    url(/static/cursors/playcursorclick@1.5x.png) 2x
   ) 8 0, pointer;
 }
 
@@ -384,7 +384,7 @@ button {
   cursor: url(/static/cursors/videocursorclick.png) 8 0, pointer;
   cursor: image-set(
     url(/static/cursors/videocursorclick.png) 1x,
-    url(/static/cursors/videocursorclick@2x.png) 2x
+    url(/static/cursors/videocursorclick@1.5x.png) 2x
   ) 8 0, pointer;
 }
 /* end cursors */
