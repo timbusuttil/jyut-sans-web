@@ -29,9 +29,6 @@
 </template>
 
 <script>
-// eslint-disable-next-line
-import closedEye from '@/assets/typeface/closedeye.png'
-
 export default {
   name: 'HoverSpecimen',
   data () {
@@ -295,7 +292,6 @@ export default {
 
 .hoverToggles {
   width: 100%;
-  height: 100px;
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
@@ -315,7 +311,7 @@ export default {
 
 .typefaceCopyContainer {
   max-width: 700px;
-  margin: 150px auto 60px auto;
+  margin: 100px auto 60px auto;
 }
 
 @media screen and (min-width: 1500px) {

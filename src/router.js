@@ -5,7 +5,7 @@ import Home from './views/Home.vue'
 Vue.use(Router)
 
 export default new Router({
-  // mode: 'history',
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -15,7 +15,7 @@ export default new Router({
     {
       path: '/typeface',
       name: 'typeface',
-      component: () => import(/* webpackChunkName: "typeface" */ './views/Typeface.vue')
+      component: () => import(/* webpackChunkName: "typeface" */ './views/Typeface.vue'),
     },
     {
       path: '/interview',
@@ -25,7 +25,7 @@ export default new Router({
     {
       path: '/how-to-play',
       name: 'how-to-play',
-      component: () => import(/* webpackChunkName: "howtoplay" */ './views/HowToPlay.vue')
+      component: () => import(/* webpackChunkName: "interactive" */ './views/HowToPlay.vue')
     },
     {
       path: '/interactive',
