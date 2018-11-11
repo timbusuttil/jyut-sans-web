@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :style="{background: this.backgroundColour}" :class="cursorClassObject">
+  <div id="app" :style="{background: this.backgroundColour}" :class="cursorClassObject" class="invisibleScrollbar">
     <div class="desktop">
       <div class="outerContainer">
         <div class="innerContainer" :style="{borderColor: this.borderColour, boxShadow: this.boxShadow}">
@@ -217,7 +217,7 @@ export default {
     boxShadow () {
       return '0 0 0 13px ' + this.backgroundColour + ', 0 0 0 19px ' + this.borderColour
     },
-    cursor () {
+    // cursor () {
       // no retina (does work)
       // if (this.navIsHovered) {
       //   return "url('./static/cursors/" + this.cursors[this.currentRouteIndex].pointer + ".png') 8 0, default"
@@ -231,7 +231,7 @@ export default {
       // } else {
       //   return "image-set(url(./static/cursors/" + this.cursors[this.currentRouteIndex].default + ".png) 1x, url(./static/cursors/" + this.cursors[this.currentRouteIndex].default + "@1.5x.png) 2x) 4 0, default;"
       // }
-    },
+    // },
     cursorClassObject () {
       return {
         projectCursor: this.currentRouteIndex === 0,
@@ -269,6 +269,10 @@ export default {
   padding: 75px 125px;
   box-sizing: border-box;
   display: flex;
+}
+
+.invisibleScrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* begin typography */
@@ -478,11 +482,6 @@ button {
 #br {
   bottom: -40px;
   right: -40px;
-}
-
-::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
 }
 
 @media screen and (max-width: 769.98px) {
